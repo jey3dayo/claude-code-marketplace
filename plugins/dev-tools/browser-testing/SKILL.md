@@ -42,10 +42,10 @@ Use Chrome MCP to open and navigate to the target URL:
 
 ```typescript
 // List existing browser pages
-mcp__chrome - devtools__list_pages();
+mcp__chrome - devtools__list_pages()
 
 // Navigate to localhost (or create new page if needed)
-mcp__chrome - devtools__navigate_page({ url: "http://localhost:3000" });
+mcp__chrome - devtools__navigate_page({ url: 'http://localhost:3000' })
 ```
 
 ### Step 3: Take Initial Snapshot
@@ -54,10 +54,10 @@ Capture the page state for verification:
 
 ```typescript
 // Text-based snapshot (preferred for accessibility tree analysis)
-mcp__chrome - devtools__take_snapshot({ verbose: false });
+mcp__chrome - devtools__take_snapshot({ verbose: false })
 
 // Screenshot for visual confirmation
-mcp__chrome - devtools__take_screenshot({ fullPage: true, format: "png" });
+mcp__chrome - devtools__take_screenshot({ fullPage: true, format: 'png' })
 ```
 
 ### Step 4: Perform Interactions
@@ -66,16 +66,14 @@ Execute user actions using element UIDs from snapshot:
 
 ```typescript
 // Click login button
-mcp__chrome - devtools__click({ uid: "element-uid-from-snapshot" });
+mcp__chrome - devtools__click({ uid: 'element-uid-from-snapshot' })
 
 // Fill form fields
-mcp__chrome -
-  devtools__fill({ uid: "email-input-uid", value: "test@example.com" });
-mcp__chrome -
-  devtools__fill({ uid: "password-input-uid", value: "password123" });
+mcp__chrome - devtools__fill({ uid: 'email-input-uid', value: 'test@example.com' })
+mcp__chrome - devtools__fill({ uid: 'password-input-uid', value: 'password123' })
 
 // Submit form
-mcp__chrome - devtools__click({ uid: "submit-button-uid" });
+mcp__chrome - devtools__click({ uid: 'submit-button-uid' })
 ```
 
 ### Step 5: Wait and Verify Results
@@ -84,17 +82,16 @@ Wait for navigation/state changes and verify outcomes:
 
 ```typescript
 // Wait for specific text to appear
-mcp__chrome - devtools__wait_for({ text: "Welcome", timeout: 5000 });
+mcp__chrome - devtools__wait_for({ text: 'Welcome', timeout: 5000 })
 
 // Take post-interaction snapshot
-mcp__chrome - devtools__take_snapshot({ verbose: false });
+mcp__chrome - devtools__take_snapshot({ verbose: false })
 
 // Check console for errors
-mcp__chrome - devtools__list_console_messages({ types: ["error", "warn"] });
+mcp__chrome - devtools__list_console_messages({ types: ['error', 'warn'] })
 
 // Inspect network requests (e.g., API calls, redirects)
-mcp__chrome -
-  devtools__list_network_requests({ resourceTypes: ["xhr", "fetch"] });
+mcp__chrome - devtools__list_network_requests({ resourceTypes: ['xhr', 'fetch'] })
 ```
 
 ### Step 6: Report Results

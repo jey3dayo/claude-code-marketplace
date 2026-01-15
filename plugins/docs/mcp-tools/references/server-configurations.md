@@ -54,12 +54,7 @@ MCP（Model Context Protocol）サーバーの完全なカタログと詳細設�
   "mcpServers": {
     "memory": {
       "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-memory",
-        "--storage-path",
-        "~/.claude/memory"
-      ]
+      "args": ["-y", "@modelcontextprotocol/server-memory", "--storage-path", "~/.claude/memory"]
     }
   }
 }
@@ -96,11 +91,7 @@ Claude: 「Reactを使用しています」
   "mcpServers": {
     "filesystem": {
       "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-filesystem",
-        "/path/to/allowed/directory"
-      ]
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/allowed/directory"]
     }
   }
 }
@@ -113,19 +104,11 @@ Claude: 「Reactを使用しています」
   "mcpServers": {
     "filesystem-projects": {
       "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-filesystem",
-        "/Users/username/projects"
-      ]
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/Users/username/projects"]
     },
     "filesystem-docs": {
       "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-filesystem",
-        "/Users/username/documents"
-      ]
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/Users/username/documents"]
     }
   }
 }
@@ -205,10 +188,7 @@ Claude: 「Reactを使用しています」
   "mcpServers": {
     "github": {
       "command": "sh",
-      "args": [
-        "-c",
-        "GITHUB_PERSONAL_ACCESS_TOKEN=$GITHUB_TOKEN npx -y @github/github-mcp-server"
-      ]
+      "args": ["-c", "GITHUB_PERSONAL_ACCESS_TOKEN=$GITHUB_TOKEN npx -y @github/github-mcp-server"]
     }
   }
 }
@@ -253,12 +233,7 @@ Claude: 「Reactを使用しています」
   "mcpServers": {
     "git": {
       "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-git",
-        "--repository",
-        "/path/to/repo"
-      ]
+      "args": ["-y", "@modelcontextprotocol/server-git", "--repository", "/path/to/repo"]
     }
   }
 }
@@ -413,11 +388,7 @@ Claude: 「Reactを使用しています」
   "mcpServers": {
     "sqlite": {
       "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-sqlite",
-        "/path/to/database.db"
-      ]
+      "args": ["-y", "@modelcontextprotocol/server-sqlite", "/path/to/database.db"]
     }
   }
 }
@@ -473,10 +444,7 @@ Claude: 「Reactを使用しています」
   "mcpServers": {
     "aws": {
       "command": "sh",
-      "args": [
-        "-c",
-        "AWS_PROFILE=myprofile npx -y @modelcontextprotocol/server-aws"
-      ]
+      "args": ["-c", "AWS_PROFILE=myprofile npx -y @modelcontextprotocol/server-aws"]
     }
   }
 }
@@ -746,13 +714,7 @@ uv pip install wcgw
   "mcpServers": {
     "shell": {
       "command": "wcgw",
-      "args": [
-        "--protocol",
-        "mcp",
-        "--safe-mode",
-        "--allowed-commands",
-        "ls,cat,grep,find"
-      ]
+      "args": ["--protocol", "mcp", "--safe-mode", "--allowed-commands", "ls,cat,grep,find"]
     }
   }
 }
@@ -786,11 +748,7 @@ uv pip install wcgw
     },
     "filesystem": {
       "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-filesystem",
-        "/Users/username/projects"
-      ]
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/Users/username/projects"]
     },
     "git": {
       "command": "npx",
@@ -798,10 +756,7 @@ uv pip install wcgw
     },
     "github": {
       "command": "sh",
-      "args": [
-        "-c",
-        "GITHUB_PERSONAL_ACCESS_TOKEN=$GITHUB_TOKEN npx -y @github/github-mcp-server"
-      ]
+      "args": ["-c", "GITHUB_PERSONAL_ACCESS_TOKEN=$GITHUB_TOKEN npx -y @github/github-mcp-server"]
     },
     "postgres": {
       "command": "sh",
@@ -825,18 +780,11 @@ uv pip install wcgw
     },
     "filesystem": {
       "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-filesystem",
-        "/Users/username/web-projects"
-      ]
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/Users/username/web-projects"]
     },
     "github": {
       "command": "sh",
-      "args": [
-        "-c",
-        "GITHUB_PERSONAL_ACCESS_TOKEN=$GITHUB_TOKEN npx -y @github/github-mcp-server"
-      ]
+      "args": ["-c", "GITHUB_PERSONAL_ACCESS_TOKEN=$GITHUB_TOKEN npx -y @github/github-mcp-server"]
     },
     "fetch": {
       "command": "npx",
@@ -868,10 +816,7 @@ uv pip install wcgw
     },
     "mysql": {
       "command": "sh",
-      "args": [
-        "-c",
-        "MYSQL_PASSWORD=$MYSQL_ROOT_PASSWORD node /path/to/mysql-server.js"
-      ]
+      "args": ["-c", "MYSQL_PASSWORD=$MYSQL_ROOT_PASSWORD node /path/to/mysql-server.js"]
     },
     "sqlite": {
       "command": "npx",

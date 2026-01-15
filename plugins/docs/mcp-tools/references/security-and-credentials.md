@@ -115,10 +115,7 @@ source ~/.zshrc
   "mcpServers": {
     "github": {
       "command": "sh",
-      "args": [
-        "-c",
-        "GITHUB_PERSONAL_ACCESS_TOKEN=$GITHUB_TOKEN npx -y @github/github-mcp-server"
-      ]
+      "args": ["-c", "GITHUB_PERSONAL_ACCESS_TOKEN=$GITHUB_TOKEN npx -y @github/github-mcp-server"]
     },
     "mysql": {
       "command": "sh",
@@ -652,23 +649,23 @@ grep "ERROR" ~/Library/Logs/Claude/mcp.log
 
 ### 優先度: 中
 
-4. **環境別の分離**
+1. **環境別の分離**
    - 開発・ステージング・本番で異なる認証情報
 
-5. **定期的な監査**
+2. **定期的な監査**
    - トークンの使用状況確認
    - 不要なトークンの削除
 
-6. **ログの監視**
+3. **ログの監視**
    - エラーログの定期的な確認
    - 不正アクセスの検知
 
 ### 優先度: 低
 
-7. **トークンのローテーション**
+1. **トークンのローテーション**
    - 3-6ヶ月ごとにトークン・パスワードを変更
 
-8. **バックアップ**
+2. **バックアップ**
    - 認証情報の安全なバックアップ（暗号化）
 
 ---
