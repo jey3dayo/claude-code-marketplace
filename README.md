@@ -18,15 +18,41 @@ git clone https://github.com/jey3dayo/claude-code-marketplace.git $REPOS_DIR
 
 ## 利用可能なプラグイン
 
-| プラグイン | 説明     |
-| ---------- | -------- |
-| xxxxxx     | xxxxxxxx |
+### 開発ツール (dev-tools)
+
+| プラグイン        | 説明                                 |
+| ----------------- | ------------------------------------ |
+| cc-sdd            | Spec-Driven Development              |
+| code-review       | コードレビュースキル                 |
+| knowledge-creator | 知識分類・作成システム               |
+| mise              | タスクランナー・ツールバージョン管理 |
+| similarity        | 類似度分析                           |
+| typescript        | TypeScript型安全性スキル             |
+
+### ドキュメント (docs)
+
+| プラグイン | 説明                     |
+| ---------- | ------------------------ |
+| deckset    | プレゼン作成支援         |
+| docs-write | Markdownドキュメント作成 |
+| drawio     | Draw.io図表作成          |
+
+### ユーティリティ (utils)
+
+| プラグイン | 説明               |
+| ---------- | ------------------ |
+| dotenvx    | 環境変数暗号化管理 |
 
 ## インストール例
 
 ```bash
 # 個別インストール
-/plugin install xxxxxx@jey3dayo
+/plugin install dotenvx@jey3dayo
+/plugin install mise@jey3dayo
+/plugin install code-review@jey3dayo
+
+# 一括インストール
+/plugin install @jey3dayo
 ```
 
 ## 参考リンク
