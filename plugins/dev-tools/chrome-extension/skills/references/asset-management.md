@@ -217,13 +217,7 @@ magick images/logo.png -resize 96x96 images/logo-2x.png
 **Usage in HTML**:
 
 ```html
-<img
-  src="images/logo-1x.png"
-  srcset="images/logo-2x.png 2x"
-  alt="Logo"
-  width="48"
-  height="48"
-/>
+<img src="images/logo-1x.png" srcset="images/logo-2x.png 2x" alt="Logo" width="48" height="48" />
 ```
 
 ## 5. Web Accessible Resources
@@ -249,13 +243,13 @@ Icons and images used in content scripts must be declared:
 
 ```typescript
 // Get extension resource URL
-const iconUrl = chrome.runtime.getURL("icons/icon48.png");
+const iconUrl = chrome.runtime.getURL('icons/icon48.png')
 
 // Use in DOM
-const img = document.createElement("img");
-img.src = iconUrl;
-img.alt = "Extension icon";
-document.body.appendChild(img);
+const img = document.createElement('img')
+img.src = iconUrl
+img.alt = 'Extension icon'
+document.body.appendChild(img)
 ```
 
 ## 6. SVG Icons

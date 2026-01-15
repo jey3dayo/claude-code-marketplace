@@ -11,10 +11,10 @@ Concrete code examples and implementation patterns for secure Chrome Extension d
 ```typescript
 // DANGEROUS: User input directly inserted into DOM
 function displayUserName(name: string) {
-  document.getElementById("user-name")!.innerHTML = name; // XSS vulnerability
+  document.getElementById('user-name')!.innerHTML = name // XSS vulnerability
 }
 
-displayUserName('<img src=x onerror=alert("XSS")>'); // Executes malicious code
+displayUserName('<img src=x onerror=alert("XSS")>') // Executes malicious code
 ```
 
 **✅ SAFE**:
@@ -22,10 +22,10 @@ displayUserName('<img src=x onerror=alert("XSS")>'); // Executes malicious code
 ```typescript
 // SAFE: Use textContent or createTextNode
 function displayUserName(name: string) {
-  document.getElementById("user-name")!.textContent = name; // Escaped automatically
+  document.getElementById('user-name')!.textContent = name // Escaped automatically
 }
 
-displayUserName('<img src=x onerror=alert("XSS")>'); // Displayed as text
+displayUserName('<img src=x onerror=alert("XSS")>') // Displayed as text
 ```
 
 ### 1.2 Sanitize HTML Content
@@ -36,22 +36,18 @@ When HTML rendering is necessary, use DOM APIs:
 /**
  * Create safe HTML elements from user content
  */
-function createSafeElement(
-  tag: string,
-  textContent: string,
-  className?: string,
-): HTMLElement {
-  const element = document.createElement(tag);
-  element.textContent = textContent; // Auto-escaped
+function createSafeElement(tag: string, textContent: string, className?: string): HTMLElement {
+  const element = document.createElement(tag)
+  element.textContent = textContent // Auto-escaped
   if (className) {
-    element.className = className;
+    element.className = className
   }
-  return element;
+  return element
 }
 
 // Usage
-const container = document.getElementById("container")!;
-container.appendChild(createSafeElement("div", userInput, "user-content"));
+const container = document.getElementById('container')!
+container.appendChild(createSafeElement('div', userInput, 'user-content'))
 ```
 
 ### 1.3 Escape HTML Utility
@@ -61,14 +57,14 @@ container.appendChild(createSafeElement("div", userInput, "user-content"));
  * Escape HTML special characters
  */
 function escapeHtml(text: string): string {
-  const div = document.createElement("div");
-  div.textContent = text;
-  return div.innerHTML;
+  const div = document.createElement('div')
+  div.textContent = text
+  return div.innerHTML
 }
 
 // Usage
-const safeContent = escapeHtml('<script>alert("XSS")</script>');
-console.log(safeContent); // &lt;script&gt;alert("XSS")&lt;/script&gt;
+const safeContent = escapeHtml('<script>alert("XSS")</script>')
+console.log(safeContent) // &lt;script&gt;alert("XSS")&lt;/script&gt;
 ```
 
 ### 1.4 URL Validation
@@ -79,11 +75,11 @@ console.log(safeContent); // &lt;script&gt;alert("XSS")&lt;/script&gt;
  */
 function isSafeUrl(url: string): boolean {
   try {
-    const parsed = new URL(url);
+    const parsed = new URL(url)
     // Only allow http/https protocols
-    return ["http:", "https:"].includes(parsed.protocol);
+    return ['http:', 'https:'].includes(parsed.protocol)
   } catch {
-    return false;
+    return false
   }
 }
 
@@ -92,21 +88,21 @@ function isSafeUrl(url: string): boolean {
  */
 function createSafeLink(url: string, text: string): HTMLAnchorElement | null {
   if (!isSafeUrl(url)) {
-    console.error("Invalid URL:", url);
-    return null;
+    console.error('Invalid URL:', url)
+    return null
   }
 
-  const link = document.createElement("a");
-  link.href = url;
-  link.textContent = text;
-  link.rel = "noopener noreferrer"; // Security best practice
-  link.target = "_blank";
-  return link;
+  const link = document.createElement('a')
+  link.href = url
+  link.textContent = text
+  link.rel = 'noopener noreferrer' // Security best practice
+  link.target = '_blank'
+  return link
 }
 
 // Usage
-const userUrl = 'javascript:alert("XSS")'; // Malicious
-const link = createSafeLink(userUrl, "Click me"); // Returns null
+const userUrl = 'javascript:alert("XSS")' // Malicious
+const link = createSafeLink(userUrl, 'Click me') // Returns null
 ```
 
 ### 1.5 Safe Data Attributes
@@ -115,18 +111,14 @@ const link = createSafeLink(userUrl, "Click me"); // Returns null
 /**
  * Safely set data attributes
  */
-function setSafeDataAttribute(
-  element: HTMLElement,
-  name: string,
-  value: string,
-): void {
+function setSafeDataAttribute(element: HTMLElement, name: string, value: string): void {
   // data-* attributes are safe for storing data
-  element.setAttribute(`data-${name}`, value);
+  element.setAttribute(`data-${name}`, value)
 }
 
 // Usage
-const button = document.createElement("button");
-setSafeDataAttribute(button, "user-id", userInput);
+const button = document.createElement('button')
+setSafeDataAttribute(button, 'user-id', userInput)
 ```
 
 ## 2. Content Security Policy (CSP)
@@ -160,9 +152,9 @@ For stricter CSP on extension pages:
 
 ```javascript
 // PROHIBITED in MV3
-element.innerHTML = "<script>doSomething()</script>";
-eval("doSomething()");
-new Function("doSomething()")();
+element.innerHTML = '<script>doSomething()</script>'
+eval('doSomething()')
+new Function('doSomething()')()
 ```
 
 **✅ SAFE**:
@@ -170,23 +162,23 @@ new Function("doSomething()")();
 ```typescript
 // Use declarative approaches
 function loadDynamicContent(data: unknown) {
-  const container = document.getElementById("dynamic-content")!;
+  const container = document.getElementById('dynamic-content')!
 
   // Clear previous content
-  container.textContent = "";
+  container.textContent = ''
 
   // Build DOM tree
-  const heading = document.createElement("h2");
-  heading.textContent = "Dynamic Content";
-  container.appendChild(heading);
+  const heading = document.createElement('h2')
+  heading.textContent = 'Dynamic Content'
+  container.appendChild(heading)
 
   // Add event listeners
-  const button = document.createElement("button");
-  button.textContent = "Click me";
-  button.addEventListener("click", () => {
-    console.log("Button clicked", data);
-  });
-  container.appendChild(button);
+  const button = document.createElement('button')
+  button.textContent = 'Click me'
+  button.addEventListener('click', () => {
+    console.log('Button clicked', data)
+  })
+  container.appendChild(button)
 }
 ```
 
@@ -224,9 +216,9 @@ function loadDynamicContent(data: unknown) {
 ```typescript
 // Use style property instead of style attribute
 function setStyles(element: HTMLElement) {
-  element.style.color = "#333";
-  element.style.fontSize = "14px";
-  element.style.padding = "10px";
+  element.style.color = '#333'
+  element.style.fontSize = '14px'
+  element.style.padding = '10px'
 }
 ```
 
@@ -234,7 +226,7 @@ function setStyles(element: HTMLElement) {
 
 ```typescript
 // Better: Use predefined CSS classes
-element.className = "user-content theme-dark";
+element.className = 'user-content theme-dark'
 ```
 
 ## 3. Permission Management
@@ -266,29 +258,29 @@ element.className = "user-content theme-dark";
 async function requestTabsPermission(): Promise<boolean> {
   try {
     const granted = await chrome.permissions.request({
-      permissions: ["tabs"],
-    });
+      permissions: ['tabs'],
+    })
 
     if (granted) {
-      console.log("Tabs permission granted");
-      return true;
+      console.log('Tabs permission granted')
+      return true
     } else {
-      console.log("Tabs permission denied");
-      return false;
+      console.log('Tabs permission denied')
+      return false
     }
   } catch (error) {
-    console.error("Permission request failed:", error);
-    return false;
+    console.error('Permission request failed:', error)
+    return false
   }
 }
 
 // Usage in popup
-document.getElementById("enable-tabs")!.addEventListener("click", async () => {
-  const granted = await requestTabsPermission();
+document.getElementById('enable-tabs')!.addEventListener('click', async () => {
+  const granted = await requestTabsPermission()
   if (granted) {
     // Enable feature
   }
-});
+})
 ```
 
 ### 3.3 Check Permissions Before Use
@@ -300,18 +292,18 @@ document.getElementById("enable-tabs")!.addEventListener("click", async () => {
 async function hasPermission(permission: string): Promise<boolean> {
   return chrome.permissions.contains({
     permissions: [permission],
-  });
+  })
 }
 
 /**
  * Use API only if permission granted
  */
 async function getAllTabs() {
-  if (await hasPermission("tabs")) {
-    return chrome.tabs.query({});
+  if (await hasPermission('tabs')) {
+    return chrome.tabs.query({})
   } else {
-    console.warn("Tabs permission not granted");
-    return [];
+    console.warn('Tabs permission not granted')
+    return []
   }
 }
 ```
@@ -325,13 +317,13 @@ async function getAllTabs() {
 async function removeTabsPermission(): Promise<boolean> {
   try {
     const removed = await chrome.permissions.remove({
-      permissions: ["tabs"],
-    });
-    console.log("Tabs permission removed:", removed);
-    return removed;
+      permissions: ['tabs'],
+    })
+    console.log('Tabs permission removed:', removed)
+    return removed
   } catch (error) {
-    console.error("Failed to remove permission:", error);
-    return false;
+    console.error('Failed to remove permission:', error)
+    return false
   }
 }
 ```
@@ -367,27 +359,27 @@ async function removeTabsPermission(): Promise<boolean> {
 /**
  * Type-safe message schema
  */
-type MessageType = "GET_DATA" | "SET_DATA" | "DELETE_DATA";
+type MessageType = 'GET_DATA' | 'SET_DATA' | 'DELETE_DATA'
 
 interface Message<T = unknown> {
-  type: MessageType;
-  payload: T;
+  type: MessageType
+  payload: T
 }
 
 /**
  * Validate message structure
  */
 function isValidMessage(message: unknown): message is Message {
-  if (typeof message !== "object" || message === null) {
-    return false;
+  if (typeof message !== 'object' || message === null) {
+    return false
   }
 
-  const msg = message as Record<string, unknown>;
+  const msg = message as Record<string, unknown>
   return (
-    typeof msg.type === "string" &&
-    ["GET_DATA", "SET_DATA", "DELETE_DATA"].includes(msg.type) &&
-    "payload" in msg
-  );
+    typeof msg.type === 'string' &&
+    ['GET_DATA', 'SET_DATA', 'DELETE_DATA'].includes(msg.type) &&
+    'payload' in msg
+  )
 }
 
 /**
@@ -396,51 +388,48 @@ function isValidMessage(message: unknown): message is Message {
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   // Validate message
   if (!isValidMessage(message)) {
-    console.error("Invalid message format:", message);
-    sendResponse({ success: false, error: "Invalid message" });
-    return;
+    console.error('Invalid message format:', message)
+    sendResponse({ success: false, error: 'Invalid message' })
+    return
   }
 
   // Validate sender (optional)
   if (!sender.id || sender.id !== chrome.runtime.id) {
-    console.error("Message from unknown sender:", sender);
-    sendResponse({ success: false, error: "Unauthorized" });
-    return;
+    console.error('Message from unknown sender:', sender)
+    sendResponse({ success: false, error: 'Unauthorized' })
+    return
   }
 
   // Handle message
-  handleMessage(message, sendResponse);
-  return true; // Keep channel open for async response
-});
+  handleMessage(message, sendResponse)
+  return true // Keep channel open for async response
+})
 ```
 
 ### 4.2 Content Script to Background Messaging
 
 ```typescript
 // content.ts
-async function sendMessageToBackground<T>(
-  type: MessageType,
-  payload: unknown,
-): Promise<T> {
+async function sendMessageToBackground<T>(type: MessageType, payload: unknown): Promise<T> {
   try {
-    const message: Message = { type, payload };
-    const response = await chrome.runtime.sendMessage(message);
+    const message: Message = { type, payload }
+    const response = await chrome.runtime.sendMessage(message)
 
     if (!response.success) {
-      throw new Error(response.error || "Unknown error");
+      throw new Error(response.error || 'Unknown error')
     }
 
-    return response.data as T;
+    return response.data as T
   } catch (error) {
-    console.error("Message send failed:", error);
-    throw error;
+    console.error('Message send failed:', error)
+    throw error
   }
 }
 
 // Usage
-const data = await sendMessageToBackground<string[]>("GET_DATA", {
-  key: "items",
-});
+const data = await sendMessageToBackground<string[]>('GET_DATA', {
+  key: 'items',
+})
 ```
 
 ### 4.3 Prevent Message Spoofing
@@ -452,20 +441,20 @@ const data = await sendMessageToBackground<string[]>("GET_DATA", {
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   // Only accept messages from extension context
   if (sender.id !== chrome.runtime.id) {
-    console.warn("Rejected message from external source");
-    return;
+    console.warn('Rejected message from external source')
+    return
   }
 
   // Only accept messages from specific URLs (if needed)
-  if (sender.url && !sender.url.startsWith(chrome.runtime.getURL(""))) {
-    console.warn("Rejected message from unauthorized URL");
-    return;
+  if (sender.url && !sender.url.startsWith(chrome.runtime.getURL(''))) {
+    console.warn('Rejected message from unauthorized URL')
+    return
   }
 
   // Process message
-  handleMessage(message, sendResponse);
-  return true;
-});
+  handleMessage(message, sendResponse)
+  return true
+})
 ```
 
 ## 5. Secure Storage Patterns
@@ -477,28 +466,28 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
  * Validate data before storing
  */
 interface UserSettings {
-  theme: "light" | "dark";
-  language: string;
-  notifications: boolean;
+  theme: 'light' | 'dark'
+  language: string
+  notifications: boolean
 }
 
 function isValidSettings(data: unknown): data is UserSettings {
-  if (typeof data !== "object" || data === null) return false;
+  if (typeof data !== 'object' || data === null) return false
 
-  const settings = data as Record<string, unknown>;
+  const settings = data as Record<string, unknown>
   return (
-    (settings.theme === "light" || settings.theme === "dark") &&
-    typeof settings.language === "string" &&
-    typeof settings.notifications === "boolean"
-  );
+    (settings.theme === 'light' || settings.theme === 'dark') &&
+    typeof settings.language === 'string' &&
+    typeof settings.notifications === 'boolean'
+  )
 }
 
 async function saveSettings(settings: unknown): Promise<void> {
   if (!isValidSettings(settings)) {
-    throw new Error("Invalid settings format");
+    throw new Error('Invalid settings format')
   }
 
-  await chrome.storage.sync.set({ settings });
+  await chrome.storage.sync.set({ settings })
 }
 ```
 
@@ -509,45 +498,39 @@ async function saveSettings(settings: unknown): Promise<void> {
  * Simple encryption utility (use Web Crypto API for production)
  */
 async function encryptData(data: string, key: CryptoKey): Promise<string> {
-  const encoder = new TextEncoder();
-  const dataBuffer = encoder.encode(data);
+  const encoder = new TextEncoder()
+  const dataBuffer = encoder.encode(data)
 
   const encrypted = await crypto.subtle.encrypt(
-    { name: "AES-GCM", iv: crypto.getRandomValues(new Uint8Array(12)) },
+    { name: 'AES-GCM', iv: crypto.getRandomValues(new Uint8Array(12)) },
     key,
-    dataBuffer,
-  );
+    dataBuffer
+  )
 
-  return btoa(String.fromCharCode(...new Uint8Array(encrypted)));
+  return btoa(String.fromCharCode(...new Uint8Array(encrypted)))
 }
 
-async function decryptData(
-  encryptedData: string,
-  key: CryptoKey,
-): Promise<string> {
-  const dataBuffer = Uint8Array.from(atob(encryptedData), (c) =>
-    c.charCodeAt(0),
-  );
+async function decryptData(encryptedData: string, key: CryptoKey): Promise<string> {
+  const dataBuffer = Uint8Array.from(atob(encryptedData), c => c.charCodeAt(0))
 
   const decrypted = await crypto.subtle.decrypt(
-    { name: "AES-GCM", iv: new Uint8Array(12) },
+    { name: 'AES-GCM', iv: new Uint8Array(12) },
     key,
-    dataBuffer,
-  );
+    dataBuffer
+  )
 
-  const decoder = new TextDecoder();
-  return decoder.decode(decrypted);
+  const decoder = new TextDecoder()
+  return decoder.decode(decrypted)
 }
 
 // Usage
-const key = await crypto.subtle.generateKey(
-  { name: "AES-GCM", length: 256 },
-  true,
-  ["encrypt", "decrypt"],
-);
+const key = await crypto.subtle.generateKey({ name: 'AES-GCM', length: 256 }, true, [
+  'encrypt',
+  'decrypt',
+])
 
-const encrypted = await encryptData("sensitive-data", key);
-await chrome.storage.local.set({ encryptedToken: encrypted });
+const encrypted = await encryptData('sensitive-data', key)
+await chrome.storage.local.set({ encryptedToken: encrypted })
 ```
 
 ### 5.3 Storage Quota Management
@@ -557,40 +540,40 @@ await chrome.storage.local.set({ encryptedToken: encrypted });
  * Check storage quota
  */
 async function getStorageInfo(): Promise<{
-  used: number;
-  quota: number;
-  percentage: number;
+  used: number
+  quota: number
+  percentage: number
 }> {
-  const bytesInUse = await chrome.storage.local.getBytesInUse();
-  const quota = chrome.storage.local.QUOTA_BYTES;
+  const bytesInUse = await chrome.storage.local.getBytesInUse()
+  const quota = chrome.storage.local.QUOTA_BYTES
 
   return {
     used: bytesInUse,
     quota,
     percentage: (bytesInUse / quota) * 100,
-  };
+  }
 }
 
 /**
  * Clean old cache entries
  */
 async function cleanOldCache(maxAge: number = 86400000): Promise<void> {
-  const all = await chrome.storage.local.get();
-  const now = Date.now();
-  const toRemove: string[] = [];
+  const all = await chrome.storage.local.get()
+  const now = Date.now()
+  const toRemove: string[] = []
 
   for (const [key, value] of Object.entries(all)) {
-    if (typeof value === "object" && value !== null && "timestamp" in value) {
-      const entry = value as { timestamp: number };
+    if (typeof value === 'object' && value !== null && 'timestamp' in value) {
+      const entry = value as { timestamp: number }
       if (now - entry.timestamp > maxAge) {
-        toRemove.push(key);
+        toRemove.push(key)
       }
     }
   }
 
   if (toRemove.length > 0) {
-    await chrome.storage.local.remove(toRemove);
-    console.log(`Cleaned ${toRemove.length} old cache entries`);
+    await chrome.storage.local.remove(toRemove)
+    console.log(`Cleaned ${toRemove.length} old cache entries`)
   }
 }
 ```
@@ -603,44 +586,41 @@ async function cleanOldCache(maxAge: number = 86400000): Promise<void> {
 /**
  * Secure API request wrapper
  */
-async function secureFetch<T>(
-  url: string,
-  options: RequestInit = {},
-): Promise<T> {
+async function secureFetch<T>(url: string, options: RequestInit = {}): Promise<T> {
   // Validate URL
-  if (!url.startsWith("https://")) {
-    throw new Error("Only HTTPS URLs allowed");
+  if (!url.startsWith('https://')) {
+    throw new Error('Only HTTPS URLs allowed')
   }
 
   // Set secure headers
-  const headers = new Headers(options.headers);
-  headers.set("X-Requested-With", "XMLHttpRequest");
+  const headers = new Headers(options.headers)
+  headers.set('X-Requested-With', 'XMLHttpRequest')
 
   // Set timeout
-  const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 10000);
+  const controller = new AbortController()
+  const timeoutId = setTimeout(() => controller.abort(), 10000)
 
   try {
     const response = await fetch(url, {
       ...options,
       headers,
       signal: controller.signal,
-      credentials: "omit", // Don't send cookies
-    });
+      credentials: 'omit', // Don't send cookies
+    })
 
-    clearTimeout(timeoutId);
+    clearTimeout(timeoutId)
 
     if (!response.ok) {
-      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`)
     }
 
-    return response.json() as Promise<T>;
+    return response.json() as Promise<T>
   } catch (error) {
-    clearTimeout(timeoutId);
-    if (error instanceof Error && error.name === "AbortError") {
-      throw new Error("Request timeout");
+    clearTimeout(timeoutId)
+    if (error instanceof Error && error.name === 'AbortError') {
+      throw new Error('Request timeout')
     }
-    throw error;
+    throw error
   }
 }
 ```
@@ -652,45 +632,45 @@ async function secureFetch<T>(
  * Simple rate limiter
  */
 class RateLimiter {
-  private requests: number[] = [];
+  private requests: number[] = []
 
   constructor(
     private readonly maxRequests: number,
-    private readonly windowMs: number,
+    private readonly windowMs: number
   ) {}
 
   canMakeRequest(): boolean {
-    const now = Date.now();
+    const now = Date.now()
     // Remove old requests outside the window
-    this.requests = this.requests.filter((time) => now - time < this.windowMs);
+    this.requests = this.requests.filter(time => now - time < this.windowMs)
 
     if (this.requests.length < this.maxRequests) {
-      this.requests.push(now);
-      return true;
+      this.requests.push(now)
+      return true
     }
 
-    return false;
+    return false
   }
 
   getWaitTime(): number {
-    if (this.requests.length === 0) return 0;
+    if (this.requests.length === 0) return 0
 
-    const oldestRequest = this.requests[0];
-    const waitTime = this.windowMs - (Date.now() - oldestRequest);
-    return Math.max(0, waitTime);
+    const oldestRequest = this.requests[0]
+    const waitTime = this.windowMs - (Date.now() - oldestRequest)
+    return Math.max(0, waitTime)
   }
 }
 
 // Usage
-const limiter = new RateLimiter(10, 60000); // 10 requests per minute
+const limiter = new RateLimiter(10, 60000) // 10 requests per minute
 
 async function makeApiCall(url: string) {
   if (!limiter.canMakeRequest()) {
-    const waitTime = limiter.getWaitTime();
-    throw new Error(`Rate limit exceeded. Wait ${waitTime}ms`);
+    const waitTime = limiter.getWaitTime()
+    throw new Error(`Rate limit exceeded. Wait ${waitTime}ms`)
   }
 
-  return secureFetch(url);
+  return secureFetch(url)
 }
 ```
 
@@ -706,23 +686,23 @@ function getUserFriendlyError(error: unknown): string {
   if (error instanceof Error) {
     // Map internal errors to user-friendly messages
     const errorMap: Record<string, string> = {
-      NetworkError: "Network connection failed. Please check your internet.",
-      TimeoutError: "Request timed out. Please try again.",
-      UnauthorizedError: "Permission denied. Please log in again.",
-    };
+      NetworkError: 'Network connection failed. Please check your internet.',
+      TimeoutError: 'Request timed out. Please try again.',
+      UnauthorizedError: 'Permission denied. Please log in again.',
+    }
 
-    return errorMap[error.name] || "An unexpected error occurred.";
+    return errorMap[error.name] || 'An unexpected error occurred.'
   }
 
-  return "An unknown error occurred.";
+  return 'An unknown error occurred.'
 }
 
 // Usage
 try {
-  await riskyOperation();
+  await riskyOperation()
 } catch (error) {
-  console.error("Internal error:", error); // Log internally
-  showUserMessage(getUserFriendlyError(error)); // Show to user
+  console.error('Internal error:', error) // Log internally
+  showUserMessage(getUserFriendlyError(error)) // Show to user
 }
 ```
 
@@ -734,9 +714,9 @@ try {
  */
 function logError(error: unknown, context: string): void {
   // Don't include sensitive data in logs
-  const sanitizedContext = context.replace(/password=\w+/gi, "password=***");
+  const sanitizedContext = context.replace(/password=\w+/gi, 'password=***')
 
-  console.error(`Error in ${sanitizedContext}:`, error);
+  console.error(`Error in ${sanitizedContext}:`, error)
 
   // In production, send to error tracking service
   // WITHOUT including user data or tokens

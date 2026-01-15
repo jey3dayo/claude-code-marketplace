@@ -10,16 +10,16 @@ Detailed coding standards for Chrome Extension development with TypeScript, Reac
 
 ```typescript
 // ✅ GOOD: Modern syntax
-const items = ["a", "b", "c"];
-const filtered = items.filter((item) => item !== "b");
-const message = `Hello, ${name}!`;
+const items = ['a', 'b', 'c']
+const filtered = items.filter(item => item !== 'b')
+const message = `Hello, ${name}!`
 
 // ❌ BAD: Old syntax
-var items = ["a", "b", "c"];
+var items = ['a', 'b', 'c']
 var filtered = items.filter(function (item) {
-  return item !== "b";
-});
-var message = "Hello, " + name + "!";
+  return item !== 'b'
+})
+var message = 'Hello, ' + name + '!'
 ```
 
 **async/await over Promises**:
@@ -27,16 +27,16 @@ var message = "Hello, " + name + "!";
 ```typescript
 // ✅ GOOD: async/await
 async function loadData(): Promise<Data> {
-  const response = await fetch(url);
-  const data = await response.json();
-  return data;
+  const response = await fetch(url)
+  const data = await response.json()
+  return data
 }
 
 // ❌ BAD: Promise chains
 function loadData(): Promise<Data> {
   return fetch(url)
-    .then((response) => response.json())
-    .then((data) => data);
+    .then(response => response.json())
+    .then(data => data)
 }
 ```
 
@@ -48,17 +48,17 @@ function loadData(): Promise<Data> {
 // ✅ GOOD: Proper error handling
 async function saveData(data: unknown): Promise<void> {
   try {
-    await chrome.storage.local.set({ data });
-    console.log("Data saved successfully");
+    await chrome.storage.local.set({ data })
+    console.log('Data saved successfully')
   } catch (error) {
-    console.error("Failed to save data:", error);
-    throw new Error("Save operation failed");
+    console.error('Failed to save data:', error)
+    throw new Error('Save operation failed')
   }
 }
 
 // ❌ BAD: No error handling
 async function saveData(data: unknown): Promise<void> {
-  await chrome.storage.local.set({ data });
+  await chrome.storage.local.set({ data })
 }
 ```
 
@@ -69,18 +69,18 @@ async function saveData(data: unknown): Promise<void> {
 ```typescript
 // ✅ GOOD: Proper typing
 interface User {
-  id: number;
-  name: string;
-  email: string;
+  id: number
+  name: string
+  email: string
 }
 
 function processUser(user: User): void {
-  console.log(user.name);
+  console.log(user.name)
 }
 
 // ❌ BAD: Using any
 function processUser(user: any): void {
-  console.log(user.name);
+  console.log(user.name)
 }
 ```
 
@@ -90,17 +90,17 @@ function processUser(user: any): void {
 // ✅ GOOD: Type guard
 function isUser(value: unknown): value is User {
   return (
-    typeof value === "object" &&
+    typeof value === 'object' &&
     value !== null &&
-    "id" in value &&
-    "name" in value &&
-    "email" in value
-  );
+    'id' in value &&
+    'name' in value &&
+    'email' in value
+  )
 }
 
 function handleData(data: unknown): void {
   if (isUser(data)) {
-    console.log(data.name); // Type-safe
+    console.log(data.name) // Type-safe
   }
 }
 ```
@@ -117,11 +117,11 @@ function handleData(data: unknown): void {
  * @throws {Error} If the API request fails
  */
 async function fetchUser(userId: number): Promise<User> {
-  const response = await fetch(`/api/users/${userId}`);
+  const response = await fetch(`/api/users/${userId}`)
   if (!response.ok) {
-    throw new Error(`Failed to fetch user: ${response.statusText}`);
+    throw new Error(`Failed to fetch user: ${response.statusText}`)
   }
-  return response.json();
+  return response.json()
 }
 ```
 
@@ -130,9 +130,9 @@ async function fetchUser(userId: number): Promise<User> {
 **Variables and functions**: camelCase
 
 ```typescript
-const userName = "John";
+const userName = 'John'
 function getUserName(): string {
-  return userName;
+  return userName
 }
 ```
 
@@ -144,26 +144,26 @@ class UserManager {
 }
 
 interface UserData {
-  id: number;
-  name: string;
+  id: number
+  name: string
 }
 ```
 
 **Constants**: UPPER_SNAKE_CASE
 
 ```typescript
-const MAX_RETRY_COUNT = 3;
-const API_BASE_URL = "https://api.example.com";
+const MAX_RETRY_COUNT = 3
+const API_BASE_URL = 'https://api.example.com'
 ```
 
 **Private members**: prefix with `_` or use `#` (preferred)
 
 ```typescript
 class DataStore {
-  #cache = new Map<string, unknown>();
+  #cache = new Map<string, unknown>()
 
   private _updateCache(key: string, value: unknown): void {
-    this.#cache.set(key, value);
+    this.#cache.set(key, value)
   }
 }
 ```
@@ -256,8 +256,7 @@ class DataStore {
 body {
   width: 320px;
   min-height: 400px;
-  font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 ```
 
@@ -277,12 +276,7 @@ body {
 **Use ARIA attributes**:
 
 ```html
-<button
-  type="button"
-  aria-label="Close dialog"
-  aria-pressed="false"
-  role="button"
->
+<button type="button" aria-label="Close dialog" aria-pressed="false" role="button">
   <span aria-hidden="true">×</span>
 </button>
 ```
@@ -444,32 +438,32 @@ src/
 **AAA Pattern (Arrange, Act, Assert)**:
 
 ```typescript
-import { describe, it, expect } from "vitest";
-import { calculateTotal } from "./utils";
+import { describe, it, expect } from 'vitest'
+import { calculateTotal } from './utils'
 
-describe("calculateTotal", () => {
-  it("should sum array of numbers correctly", () => {
+describe('calculateTotal', () => {
+  it('should sum array of numbers correctly', () => {
     // Arrange
-    const numbers = [1, 2, 3, 4, 5];
+    const numbers = [1, 2, 3, 4, 5]
 
     // Act
-    const result = calculateTotal(numbers);
+    const result = calculateTotal(numbers)
 
     // Assert
-    expect(result).toBe(15);
-  });
+    expect(result).toBe(15)
+  })
 
-  it("should return 0 for empty array", () => {
+  it('should return 0 for empty array', () => {
     // Arrange
-    const numbers: number[] = [];
+    const numbers: number[] = []
 
     // Act
-    const result = calculateTotal(numbers);
+    const result = calculateTotal(numbers)
 
     // Assert
-    expect(result).toBe(0);
-  });
-});
+    expect(result).toBe(0)
+  })
+})
 ```
 
 ### 5.2 Test Coverage
@@ -571,20 +565,20 @@ docs: update README with new features
 ```typescript
 function debounce<T extends (...args: unknown[]) => unknown>(
   func: T,
-  wait: number,
+  wait: number
 ): (...args: Parameters<T>) => void {
-  let timeout: number | undefined;
+  let timeout: number | undefined
 
   return (...args: Parameters<T>) => {
-    clearTimeout(timeout);
-    timeout = window.setTimeout(() => func(...args), wait);
-  };
+    clearTimeout(timeout)
+    timeout = window.setTimeout(() => func(...args), wait)
+  }
 }
 
 // Usage
 const handleSearch = debounce((query: string) => {
   // Expensive search operation
-}, 300);
+}, 300)
 ```
 
 ### 8.2 Lazy Loading
@@ -594,13 +588,11 @@ const handleSearch = debounce((query: string) => {
 ```typescript
 // Load heavy module only when needed
 async function loadHeavyFeature() {
-  const module = await import("./heavy-feature");
-  module.initialize();
+  const module = await import('./heavy-feature')
+  module.initialize()
 }
 
-document
-  .getElementById("load-feature")!
-  .addEventListener("click", loadHeavyFeature);
+document.getElementById('load-feature')!.addEventListener('click', loadHeavyFeature)
 ```
 
 ### 8.3 Memoization
@@ -608,16 +600,16 @@ document
 **Cache expensive computations**:
 
 ```typescript
-const cache = new Map<string, unknown>();
+const cache = new Map<string, unknown>()
 
 function memoize<T>(key: string, compute: () => T): T {
   if (cache.has(key)) {
-    return cache.get(key) as T;
+    return cache.get(key) as T
   }
 
-  const result = compute();
-  cache.set(key, result);
-  return result;
+  const result = compute()
+  cache.set(key, result)
+  return result
 }
 ```
 
@@ -652,11 +644,11 @@ function memoize<T>(key: string, compute: () => T): T {
 ```typescript
 // ❌ BAD: Obvious comment
 // Increment counter by 1
-counter++;
+counter++
 
 // ✅ GOOD: Explains why
 // Increment by 2 to skip even numbers for performance optimization
-counter += 2;
+counter += 2
 ```
 
 ---

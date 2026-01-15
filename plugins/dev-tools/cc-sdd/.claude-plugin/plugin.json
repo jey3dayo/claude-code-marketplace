@@ -1,9 +1,20 @@
 {
   "name": "cc-sdd",
   "version": "1.0.0",
-  "description": "Kiro形式スペック駆動開発スキル。要件定義から設計、実装タスクまでの一貫したワークフローを提供",
+  "description": "Standardized Kiro-style spec-driven development plugin with configurable directory structure. Provides a consistent workflow from requirements to design to implementation tasks.",
   "author": {
     "name": "jey3dayo"
   },
-  "skillsPath": "skills"
+  "tags": ["spec-driven", "kiro", "workflow", "requirements", "design", "tasks", "development"],
+  "keywords": [
+    "kiro",
+    "spec-driven",
+    "specification",
+    "steering",
+    "cc-sdd",
+    "スペック駆動開発",
+    "要件定義",
+    "設計",
+    "実装"
+  ]
 }

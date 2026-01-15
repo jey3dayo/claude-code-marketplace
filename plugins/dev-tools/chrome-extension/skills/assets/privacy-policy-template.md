@@ -12,11 +12,11 @@
 
 [Choose the appropriate section based on your extension's functionality]
 
-**Option 1: No Data Collection**
+#### Option 1: No Data Collection
 
 We do not collect, store, or transmit any personal information or browsing data. All processing happens locally on your device.
 
-**Option 2: Limited Data Collection**
+#### Option 2: Limited Data Collection
 
 We collect the following information:
 
