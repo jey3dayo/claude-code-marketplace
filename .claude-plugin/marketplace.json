@@ -107,6 +107,18 @@
       }
     },
     {
+      "name": "openai-skills",
+      "source": "./plugins/openai-skills",
+      "description": "OpenAI 公式キュレーションスキル集。GitHub CI修正、Notion統合等の実運用スキル6種",
+      "version": "1.0.0",
+      "author": {
+        "name": "openai",
+        "url": "https://github.com/openai/skills"
+      },
+      "homepage": "https://github.com/openai/skills",
+      "strict": false
+    },
+    {
       "name": "code-review",
       "source": "./plugins/dev-tools/code-review",
       "description": "包括的なコード品質評価とレビュー。5段階評価システムとプロジェクト固有の基準統合",

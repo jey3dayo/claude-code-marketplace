@@ -1,0 +1,4 @@
+[submodule "plugins/openai-skills"]
+	path = plugins/openai-skills
+	url = https://github.com/openai/skills.git
+	branch = main
