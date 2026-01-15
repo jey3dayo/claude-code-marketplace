@@ -2,7 +2,7 @@
 
 ---
 
-**Document Length Guidelines: Max 1000 lines**
+## Document Length Guidelines (Max 1000 lines)
 
 **Purpose**: Provide sufficient detail to ensure implementation consistency across different implementers, preventing interpretation drift.
 
@@ -130,14 +130,14 @@ Group related components under domain/layer headings for clarity.
 
 #### [Component Name]
 
-**Responsibility & Boundaries**
+##### Responsibility & Boundaries
 
 - **Primary Responsibility**: Single, clear statement of what this component does
 - **Domain Boundary**: Which domain/subdomain this belongs to
 - **Data Ownership**: What data this component owns and manages
 - **Transaction Boundary**: Scope of transactional consistency (if applicable)
 
-**Dependencies**
+##### Dependencies
 
 - **Inbound**: Components/services that depend on this component
 - **Outbound**: Components/services this component depends on
@@ -153,7 +153,7 @@ Group related components under domain/layer headings for clarity.
 - Document any assumptions, unknowns, or risks for implementation phase
 - If critical information is missing, clearly note "Requires investigation during implementation: [specific concern]"
 
-**Contract Definition**
+##### Contract Definition
 
 Select and generate ONLY the relevant contract types for each component:
 

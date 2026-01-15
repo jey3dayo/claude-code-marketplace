@@ -48,4 +48,4 @@
 
 ---
 
-_Document standards and patterns, not every dependency_
+Document standards and patterns, not every dependency.

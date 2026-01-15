@@ -240,13 +240,13 @@ Closes #12, #20
 
 ### Step-by-Step Process
 
-**1. Fetch PR Data**
+#### 1. Fetch PR Data
 
 ```bash
 gh pr view <number> --json title,body,commits,files
 ```
 
-**2. Analyze Commits**
+#### 2. Analyze Commits
 
 For each commit in the PR:
 
@@ -260,7 +260,7 @@ For each commit in the PR:
 3. Group by type (feat/fix/refactor/etc.)
 ```
 
-**3. Generate Subject**
+#### 3. Generate Subject
 
 ```
 1. Identify primary type (most common type in essential commits)
@@ -270,7 +270,7 @@ For each commit in the PR:
 5. Format: <type>(<scope>): <summary> (#number)
 ```
 
-**4. Generate Body**
+#### 4. Generate Body
 
 ```
 1. Start with "Issue #XX の実装" (if linked to issue)
@@ -284,7 +284,7 @@ For each commit in the PR:
 4. Add footer with "Closes #XX" or "Fixes #XX"
 ```
 
-**5. Confirm with User**
+#### 5. Confirm with User
 
 Before executing merge:
 
@@ -294,7 +294,7 @@ Ask: "Proceed with merge? (y/n)"
 If 'n', allow editing
 ```
 
-**6. Execute Merge**
+#### 6. Execute Merge
 
 ```bash
 gh pr merge <number> --squash \

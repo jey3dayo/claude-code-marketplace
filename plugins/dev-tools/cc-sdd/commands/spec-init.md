@@ -6,7 +6,7 @@ argument-hint: <project-description>
 
 # Spec Initialization
 
-<background_information>
+## Background Information
 
 - **Mission**: Initialize the first phase of spec-driven development by creating directory structure and metadata for a new specification
 - **Success Criteria**:
@@ -14,9 +14,8 @@ argument-hint: <project-description>
   - Create unique spec structure without conflicts
   - Provide clear path to next phase (requirements generation)
   - Support configurable directory structure via `.kiro-config.json`
-    </background_information>
 
-<instructions>
+## Instructions
 
 ## Step 1: Load Configuration
 
@@ -82,8 +81,6 @@ argument-hint: <project-description>
 - Maintain strict phase separation
 - Only initialization is performed in this phase
 - Use configured paths, not hardcoded `.kiro/`
-
-</instructions>
 
 ## Tool Guidance
 

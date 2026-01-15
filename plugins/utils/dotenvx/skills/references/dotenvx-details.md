@@ -276,13 +276,13 @@ dotenvx run -f .env.production -f .env -- node app.js
 
 ### From dotenv to dotenvx
 
-**Step 1: Install dotenvx**
+#### Step 1: Install dotenvx
 
 ```bash
 npm install --save-dev @dotenvx/dotenvx
 ```
 
-**Step 2: Update code** (optional, backward compatible)
+#### Step 2: Update code (optional, backward compatible)
 
 ```javascript
 // Old (dotenv)
@@ -292,14 +292,14 @@ require('dotenv').config({ path: '.env.production' })
 // Just run: dotenvx run -f .env.production -- node app.js
 ```
 
-**Step 3: Encrypt existing .env files**
+#### Step 3: Encrypt existing .env files
 
 ```bash
 dotenvx encrypt -f .env.production
 dotenvx encrypt -f .env.staging
 ```
 
-**Step 4: Update .gitignore**
+#### Step 4: Update .gitignore
 
 ```gitignore
 .env
@@ -310,7 +310,7 @@ dotenvx encrypt -f .env.staging
 .env.vault
 ```
 
-**Step 5: Update scripts**
+#### Step 5: Update scripts
 
 ```json
 {

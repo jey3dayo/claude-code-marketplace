@@ -1,6 +1,6 @@
 # Claude Marketplace Sync 詳細リファレンス
 
-# 🤖 Claude Code Marketplace Sync
+## 🤖 Claude Code Marketplace Sync
 
 **最終更新**: 2025-12-23
 **対象**: 開発者
@@ -248,7 +248,7 @@ skip_installed = true
 - `enabled`: 管理する marketplace リポジトリのリスト
 - デフォルトで 3 つの公式 marketplace を有効化
 
-#### [plugins.<marketplace-name>]
+#### `plugins.<marketplace-name>`
 
 - `install`: インストールするプラグイン名のリスト
 - `auto_update`: 自動更新の有効/無効（LSP サーバーは `false` 推奨）

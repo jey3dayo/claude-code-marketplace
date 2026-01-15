@@ -16,4 +16,4 @@
 
 ---
 
-_Focus on patterns and purpose, not exhaustive feature lists_
+Focus on patterns and purpose, not exhaustive feature lists.

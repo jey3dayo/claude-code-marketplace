@@ -42,4 +42,4 @@ import { Local } from './local' // Relative
 
 ---
 
-_Document patterns, not file trees. New files following patterns shouldn't require updates_
+Document patterns, not file trees. New files following patterns should not require updates.

@@ -8,7 +8,7 @@ Conduct comprehensive research and analysis to ensure the technical design is ba
 
 ### 1. Requirements Analysis
 
-**Map Requirements to Technical Needs**
+#### Map Requirements to Technical Needs
 
 - Extract all functional requirements from EARS format
 - Identify non-functional requirements (performance, security, scalability)
@@ -17,7 +17,7 @@ Conduct comprehensive research and analysis to ensure the technical design is ba
 
 ### 2. Existing Implementation Analysis
 
-**Understand Current System** (if modifying/extending):
+#### Understand Current System (if modifying/extending)
 
 - Analyze codebase structure and architecture patterns
 - Map reusable components, services, utilities
@@ -27,7 +27,7 @@ Conduct comprehensive research and analysis to ensure the technical design is ba
 
 ### 3. Technology Research
 
-**Investigate Best Practices and Solutions**:
+#### Investigate Best Practices and Solutions
 
 - **Use WebSearch** to find:
   - Latest architectural patterns for similar problems
@@ -43,7 +43,7 @@ Conduct comprehensive research and analysis to ensure the technical design is ba
 
 ### 4. External Dependencies Investigation
 
-**For Each External Service/Library**:
+#### For Each External Service/Library
 
 - Search for official documentation and GitHub repositories
 - Verify API signatures and authentication methods
@@ -55,7 +55,7 @@ Conduct comprehensive research and analysis to ensure the technical design is ba
 
 ### 5. Architecture Pattern Analysis
 
-**Evaluate Architectural Options**:
+#### Evaluate Architectural Options
 
 - Compare relevant patterns (MVC, Clean, Hexagonal, Event-driven)
 - Assess fit with existing architecture
@@ -64,7 +64,7 @@ Conduct comprehensive research and analysis to ensure the technical design is ba
 
 ### 6. Risk Assessment
 
-**Identify Technical Risks**:
+#### Identify Technical Risks
 
 - Performance bottlenecks and scaling limits
 - Security vulnerabilities and attack vectors
@@ -76,14 +76,14 @@ Conduct comprehensive research and analysis to ensure the technical design is ba
 
 ### When to Search
 
-**Always search for**:
+#### Always search for
 
 - External API documentation and updates
 - Security best practices for authentication/authorization
 - Performance optimization techniques for identified bottlenecks
 - Latest versions and migration paths for dependencies
 
-**Search if uncertain about**:
+#### Search if uncertain about
 
 - Architectural patterns for specific use cases
 - Industry standards for data formats/protocols

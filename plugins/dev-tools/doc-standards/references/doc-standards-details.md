@@ -42,18 +42,18 @@ See `references/config-schema.md` for complete configuration options.
 
 ### For Project Maintainers: Setup
 
-**Step 1: Create Project Config**
+#### Step 1: Create Project Config
 
 ```bash
 mkdir -p .claude/doc-standards/references
 touch .claude/doc-standards/config.yaml
 ```
 
-**Step 2: Define Configuration**
+#### Step 2: Define Configuration
 
 Create minimal config (see above) or comprehensive config (see `references/config-schema.md`).
 
-**Step 3: Create Tag Taxonomy**
+#### Step 3: Create Tag Taxonomy
 
 Define project tags in `.claude/doc-standards/references/tag-taxonomy.md`:
 
@@ -80,14 +80,14 @@ Define project tags in `.claude/doc-standards/references/tag-taxonomy.md`:
   ...
 ```
 
-**Step 4: (Optional) Add Examples**
+#### Step 4: (Optional) Add Examples
 
 Create project-specific examples:
 
 - `references/size-guidelines-examples.md`
 - `references/quality-checklist-examples.md`
 
-**Step 5: Verify Discovery**
+#### Step 5: Verify Discovery
 
 The skill will automatically discover and load your configuration.
 
