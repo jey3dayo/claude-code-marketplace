@@ -20,6 +20,9 @@
     },
     {
       "pattern": "TODO\\.md$"
+    },
+    {
+      "pattern": "^https://inkscape\\.org/"
     }
   ],
   "replacementPatterns": [
