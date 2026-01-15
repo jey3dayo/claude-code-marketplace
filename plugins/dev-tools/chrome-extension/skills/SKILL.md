@@ -28,13 +28,11 @@ For generic Chrome Extension documentation, use Context7 MCP instead of maintain
 ### Available Libraries
 
 1. **Primary**: `/websites/developer_chrome_extensions` (6849 snippets, High reputation)
-
    - Comprehensive Chrome Extension documentation
    - Manifest V3 migration guides
    - Architecture patterns
 
 2. **API Reference**: `/websites/developer_chrome_extensions_reference_api` (9938 snippets)
-
    - Complete chrome.\* API documentation
    - Method signatures and examples
 
@@ -139,7 +137,6 @@ tests/
 ### 3.3 Component Responsibilities (REQUIRED)
 
 - **Service Worker (background)**:
-
   - Permission-required operations
   - Event handlers
   - Centralized logging
@@ -147,13 +144,11 @@ tests/
   - **NEVER**: DOM access
 
 - **Content Script**:
-
   - DOM access/modification
   - Page information extraction (minimal scope)
   - **NEVER**: Permission APIs
 
 - **Extension Pages (popup/options)**:
-
   - UI and user settings
   - **NEVER**: Direct DOM manipulation of web pages
 
@@ -167,13 +162,11 @@ tests/
 ### Test Layers (REQUIRED)
 
 1. **Vitest** (Unit Tests)
-
    - Test shared logic, RPC, parsers, state transitions
    - Mock chrome APIs using `@types/chrome`
    - Target coverage: 80%+ for shared logic
 
 2. **Playwright** (E2E Tests)
-
    - Install in real browser
    - Verify page operations
    - Test extension UI / CS behavior
@@ -216,11 +209,11 @@ tests/
  */
 async function getStorageValue<T>(key: string, defaultValue: T): Promise<T> {
   try {
-    const result = await chrome.storage.local.get(key);
-    return result[key] ?? defaultValue;
+    const result = await chrome.storage.local.get(key)
+    return result[key] ?? defaultValue
   } catch (error) {
-    console.error(`Failed to get storage value for ${key}:`, error);
-    return defaultValue;
+    console.error(`Failed to get storage value for ${key}:`, error)
+    return defaultValue
   }
 }
 ```
@@ -336,7 +329,6 @@ Automatically activate this skill when:
 ### Context7 Delegation Strategy
 
 1. **Generic Documentation** → Context7 MCP
-
    - Manifest V3 basics
    - chrome.\* API documentation
    - Standard messaging patterns

@@ -5,6 +5,6 @@
   "author": {
     "name": "jey3dayo"
   },
-  "commandsPath": "commands",
-  "skillsPath": "skills"
+  "commands": ["./commands/"],
+  "skills": ["./skills/"]
 }
