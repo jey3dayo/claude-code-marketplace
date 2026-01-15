@@ -1,0 +1,7 @@
+{
+  "name": "pr-review-automation",
+  "version": "1.0.0",
+  "description": "PRレビュー自動化システム",
+  "author": { "name": "jey3dayo" },
+  "skills": ["./"]
+}

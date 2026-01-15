@@ -1,0 +1,7 @@
+{
+  "name": "markdown-docs",
+  "version": "1.0.0",
+  "description": "Markdownドキュメント作成スキル",
+  "author": { "name": "jey3dayo" },
+  "skills": ["./"]
+}
