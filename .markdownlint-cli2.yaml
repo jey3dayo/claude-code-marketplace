@@ -1,3 +1,4 @@
+---
 # markdownlint-cli2 configuration
 config:
   default: true
@@ -7,3 +8,5 @@ config:
     tables: false
   MD040: false
   MD024: false
+  MD060:
+    style: consistent

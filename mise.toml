@@ -25,7 +25,7 @@ run = "prettier --write --cache --log-level warn '**/*.{md,json,yml,yaml}'"
 
 [tasks."format:markdown"]
 description = "Markdownlintで自動修正"
-run = "markdownlint-cli2 --fix '**/*.md' '!node_modules'"
+run = "markdownlint-cli2 --fix \"**/*.md\" \"#**/node_modules/**\""
 
 # --- Lint Commands ---
 [tasks."lint:prettier"]
@@ -34,7 +34,7 @@ run = "prettier --check --cache --log-level warn '**/*.{md,json,yml,yaml}'"
 
 [tasks."lint:markdown"]
 description = "Markdownlintでチェック"
-run = "markdownlint-cli2 '**/*.md' '!node_modules'"
+run = "markdownlint-cli2 \"**/*.md\" \"#**/node_modules/**\""
 
 [tasks."lint:yaml"]
 description = "YAMLファイルをチェック"

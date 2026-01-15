@@ -96,6 +96,42 @@
       "description": "Markdownプレゼンテーション作成（Marp/Deckset/reveal.js、Context7統合）",
       "version": "1.0.0",
       "author": { "name": "jey3dayo" }
+    },
+    {
+      "name": "cc-sdd",
+      "source": "./plugins/dev-tools/cc-sdd",
+      "description": "Standardized Kiro-style spec-driven development plugin with configurable directory structure. Provides a consistent workflow from requirements to design to implementation tasks.",
+      "version": "1.0.0",
+      "author": {
+        "name": "jey3dayo"
+      }
+    },
+    {
+      "name": "code-review",
+      "source": "./plugins/dev-tools/code-review",
+      "description": "包括的なコード品質評価とレビュー。5段階評価システムとプロジェクト固有の基準統合",
+      "version": "1.0.0",
+      "author": {
+        "name": "jey3dayo"
+      }
+    },
+    {
+      "name": "similarity",
+      "source": "./plugins/dev-tools/similarity",
+      "description": "TypeScript/JavaScriptコード類似度検出スキル。重複コード発見とリファクタリング支援",
+      "version": "1.0.0",
+      "author": {
+        "name": "jey3dayo"
+      }
+    },
+    {
+      "name": "typescript",
+      "source": "./plugins/dev-tools/typescript",
+      "description": "TypeScriptプロジェクト専門レビュースキル。型安全性、TypeScriptベストプラクティス、コンパイラオプション評価",
+      "version": "1.0.0",
+      "author": {
+        "name": "jey3dayo"
+      }
     }
   ]
 }
