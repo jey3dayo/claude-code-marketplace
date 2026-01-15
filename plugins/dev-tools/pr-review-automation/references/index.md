@@ -165,4 +165,3 @@ echo ".pr-review-config.json" >> .gitignore
 
 - [GitHub CLI Documentation](https://cli.github.com/manual/)
 - [CodeRabbit Documentation](https://docs.coderabbit.ai/)
-- [Claude Code Commands](../../commands/)

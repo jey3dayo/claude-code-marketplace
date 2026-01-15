@@ -10,7 +10,7 @@ Claude Code marketplace からプラグインとスキルを管理するため�
 
 ## 🤖 Claude Rules
 
-このドキュメントの凝縮版ルールは [`docs/claude-code.md`](../../../docs/claude-code.md) で管理されています。
+このドキュメントの凝縮版ルールは別途管理されています（現在、外部参照はなし）。
 
 - **目的**: Claude AI が常に参照する簡潔なルール
 - **適用範囲**: YAML frontmatter `paths:` で定義

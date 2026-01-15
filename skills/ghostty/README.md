@@ -240,4 +240,4 @@ This skill follows the [Agent Skills specification](https://agentskills.io):
 
 ## License
 
-MIT License - see [LICENSE](../../LICENSE) in repository root.
+MIT License

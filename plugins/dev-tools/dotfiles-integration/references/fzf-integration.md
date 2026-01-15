@@ -265,8 +265,8 @@ sheldon source --verbose
 
 ### Documentation Links
 
-- **Shell Integration**: [Shell Layer](../../zsh/references/zsh.md)
-- **Terminal Integration**: [Terminal Layer](../../wezterm/references/wezterm.md)
+- **Shell Integration**: 詳細は dotfiles リポジトリの `docs/zsh/references/zsh.md` を参照
+- **Terminal Integration**: 詳細は dotfiles リポジトリの `docs/wezterm/references/wezterm.md` を参照
 
 ### Implementation Files
 
