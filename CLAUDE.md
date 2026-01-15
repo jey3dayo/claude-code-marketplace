@@ -11,6 +11,7 @@
 ### 基本マニュアル
 
 - **[プラグインマーケットプレイス](https://code.claude.com/docs/en/plugin-marketplaces)** - マーケットプレイスの仕組みと構造
+
   - `marketplace.json` の詳細仕様
   - プラグインの登録方法
   - マーケットプレイスの配布方法
@@ -23,6 +24,7 @@
 ### コンポーネント別マニュアル
 
 - **[スラッシュコマンド](https://code.claude.com/docs/en/slash-commands)** - カスタムコマンドの作成方法
+
   - コマンドファイル形式（フロントマター）
   - 引数の処理方法
   - 許可ツールの指定
@@ -68,6 +70,45 @@ claude-code-marketplace/
 
 ````
 
+## サブモジュール管理
+
+このマーケットプレイスでは、外部リポジトリをサブモジュールとして統合しています。
+
+### 現在のサブモジュール
+
+| サブモジュール | パス | 用途 |
+|---------------|------|------|
+| openai-skills | `plugins/openai-skills` | OpenAI 公式キュレーションスキル |
+
+### サブモジュールの更新
+
+```bash
+# 全てのサブモジュールを更新
+git submodule update --remote
+
+# 特定のサブモジュールを更新
+git submodule update --remote plugins/openai-skills
+
+# クローン時にサブモジュールを含める
+git clone --recursive https://github.com/jey3dayo/claude-code-marketplace.git
+```
+
+### 新しいサブモジュールの追加
+
+外部リポジトリをサブモジュールとして追加する場合:
+
+```bash
+# サブモジュールを追加
+git submodule add -b main <repository-url> plugins/<category>/<plugin-name>
+
+# .claude-plugin/plugin.json を作成
+# marketplace.json に登録
+```
+
+詳細は [OpenAI Skills プラグイン](plugins/openai-skills/) を参照。
+
+````
+
 ## プラグイン開発ガイド
 
 ### 新しいプラグインを追加する
@@ -75,6 +116,7 @@ claude-code-marketplace/
 #### 1. 適切なカテゴリを選択
 
 プラグインの用途に応じてカテゴリを選択：
+
 - **dev-tools**: コード品質、レビュー、開発ワークフロー
 - **docs**: ドキュメント、図表、プレゼン作成
 - **utils**: 汎用ユーティリティ、環境管理
@@ -248,4 +290,7 @@ model: haiku
 - [Claude Code プラグインリファレンス](https://code.claude.com/docs/en/plugins-reference)
 - [プラグインマーケットプレイス](https://code.claude.com/docs/en/plugin-marketplaces)
 - [サブエージェント](https://code.claude.com/docs/en/sub-agents)
-````
+
+```
+
+```
