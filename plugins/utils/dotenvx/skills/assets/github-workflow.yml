@@ -1,6 +1,7 @@
+---
 name: Deploy with dotenvx
 
-on:
+'on':
   push:
     branches:
       - main
@@ -17,7 +18,10 @@ on:
 
 jobs:
   deploy-staging:
-    if: github.ref == 'refs/heads/staging' || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'staging')
+    if: >-
+      github.ref == 'refs/heads/staging' ||
+      (github.event_name == 'workflow_dispatch' &&
+      github.event.inputs.environment == 'staging')
     runs-on: ubuntu-latest
     environment: staging
     steps:
@@ -39,7 +43,10 @@ jobs:
         run: npm run deploy:staging
 
   deploy-production:
-    if: github.ref == 'refs/heads/main' || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'production')
+    if: >-
+      github.ref == 'refs/heads/main' ||
+      (github.event_name == 'workflow_dispatch' &&
+      github.event.inputs.environment == 'production')
     runs-on: ubuntu-latest
     environment: production
     steps:
@@ -57,13 +64,15 @@ jobs:
 
       - name: Verify encryption
         env:
-          DOTENV_PRIVATE_KEY_PRODUCTION: ${{ secrets.DOTENV_PRIVATE_KEY_PRODUCTION }}
+          DOTENV_PRIVATE_KEY_PRODUCTION: >-
+            ${{ secrets.DOTENV_PRIVATE_KEY_PRODUCTION }}
         run: |
           npx dotenvx run -f .env.production -- echo "✅ Decryption successful"
 
       - name: Deploy to Production
         env:
-          DOTENV_PRIVATE_KEY_PRODUCTION: ${{ secrets.DOTENV_PRIVATE_KEY_PRODUCTION }}
+          DOTENV_PRIVATE_KEY_PRODUCTION: >-
+            ${{ secrets.DOTENV_PRIVATE_KEY_PRODUCTION }}
         run: npm run deploy:production
 
       - name: Notify deployment
