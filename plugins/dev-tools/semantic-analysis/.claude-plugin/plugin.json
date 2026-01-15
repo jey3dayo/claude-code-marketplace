@@ -1,0 +1,9 @@
+{
+  "name": "semantic-analysis",
+  "version": "1.0.0",
+  "description": "Serena MCP使用の意味的コード解析。API整合性、アーキテクチャ境界、依存関係健全性",
+  "author": {
+    "name": "jey3dayo"
+  },
+  "skills": ["./SKILL.md"]
+}

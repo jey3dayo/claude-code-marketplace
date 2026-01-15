@@ -5,5 +5,5 @@
   "author": {
     "name": "jey3dayo"
   },
-  "skillsPath": "skills"
+  "skills": ["./skills/"]
 }

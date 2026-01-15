@@ -506,4 +506,4 @@ keybind = ctrl+z=text:\x1a
 - **VT100 Control Sequences**: <https://vt100.net/docs/vt100-ug/chapter3.html>
 - **Kitty Keyboard Protocol**: <https://sw.kovidgoyal.net/kitty/keyboard-protocol/>
 - **Ghostty Key Encoder API**: <https://github.com/ghostty-org/ghostty> (see `include/ghostty/vt.h`)
-- **ECMA-48 CSI Sequences**: <https://www.ecma-international.org/publications/standards/Ecma-048.htm>
+- **ECMA-48 CSI Sequences**: <https://www.ecma-international.org/publications-and-standards/standards/ecma-48>

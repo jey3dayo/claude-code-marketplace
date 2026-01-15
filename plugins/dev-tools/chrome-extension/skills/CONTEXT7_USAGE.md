@@ -174,46 +174,43 @@ Library: /websites/developer_chrome_extensions
 ```typescript
 // shared/rpc.ts - Type-safe message schema (from this skill)
 export interface GetUserDataRequest {
-  type: "GET_USER_DATA";
+  type: 'GET_USER_DATA'
 }
 
 export interface GetUserDataResponse {
-  username: string;
-  email: string;
+  username: string
+  email: string
 }
 
 // content/main.ts - Content script
 async function getUserData(): Promise<GetUserDataResponse> {
   try {
-    const response = await chrome.runtime.sendMessage<
-      GetUserDataRequest,
-      GetUserDataResponse
-    >({
-      type: "GET_USER_DATA",
-    });
-    return response;
+    const response = await chrome.runtime.sendMessage<GetUserDataRequest, GetUserDataResponse>({
+      type: 'GET_USER_DATA',
+    })
+    return response
   } catch (error) {
-    console.error("Failed to get user data:", error);
-    throw new Error("Failed to fetch user data");
+    console.error('Failed to get user data:', error)
+    throw new Error('Failed to fetch user data')
   }
 }
 
 // background/service-worker.ts - Service worker
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if (message.type === "GET_USER_DATA") {
+  if (message.type === 'GET_USER_DATA') {
     // Async handler pattern
-    (async () => {
+    ;(async () => {
       try {
-        const userData = await fetchUserData();
-        sendResponse(userData);
+        const userData = await fetchUserData()
+        sendResponse(userData)
       } catch (error) {
-        console.error("Error fetching user data:", error);
-        sendResponse({ error: "Internal error" });
+        console.error('Error fetching user data:', error)
+        sendResponse({ error: 'Internal error' })
       }
-    })();
-    return true; // Keep message channel open for async response
+    })()
+    return true // Keep message channel open for async response
   }
-});
+})
 ```
 
 ### Step 3: Verify Against Policies

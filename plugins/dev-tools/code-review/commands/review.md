@@ -384,8 +384,6 @@ TypeScript固有の詳細な観点については、以下を参照してくだ�
 
 #### 📘 [TypeScript Review Skill](../../typescript/skills/SKILL.md)
 
-#### 📄 [TypeScript Review Criteria](../../typescript/skills/references/review-criteria.md)
-
 #### 主要なTypeScript観点（サマリー）
 
 **型安全性**:

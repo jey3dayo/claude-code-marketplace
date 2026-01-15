@@ -1,0 +1,9 @@
+{
+  "name": "ci-diagnostics",
+  "version": "1.0.0",
+  "description": "GitHub Actions CI失敗の診断と修正プラン生成",
+  "author": {
+    "name": "jey3dayo"
+  },
+  "skills": ["./SKILL.md"]
+}

@@ -137,12 +137,10 @@ keybind = alt+l=goto_split:right
 **Key Differences:**
 
 1. **Leader Key:**
-
    - WezTerm: `leader = { key = "x", mods = "CTRL" }`
    - Ghostty: Sequence notation (`ctrl+x>c`)
 
 2. **Actions:**
-
    - WezTerm: `act.SpawnTab "CurrentPaneDomain"`
    - Ghostty: `new_tab`
 
@@ -199,12 +197,10 @@ window-padding-y = 0
 **Key Differences:**
 
 1. **Font Fallback:**
-
    - WezTerm: `font_with_fallback` (array)
    - Ghostty: Multiple `font-family` lines
 
 2. **Theme:**
-
    - WezTerm: `color_scheme = "Gruvbox Dark (Gogh)"`
    - Ghostty: `theme = "Gruvbox Dark Hard"`
 
@@ -248,12 +244,10 @@ keybind = ctrl+x>[=toggle_copy_mode
 **Key Differences:**
 
 1. **Activation:**
-
    - WezTerm: `{ key = "[", mods = "LEADER", action = act.ActivateCopyMode }`
    - Ghostty: `keybind = ctrl+x>[=toggle_copy_mode`
 
 2. **Navigation:**
-
    - WezTerm: Explicit key table (`copy_mode`)
    - Ghostty: Built-in Vim keys (less config needed)
 
@@ -323,7 +317,7 @@ keybind = ctrl+x>[=toggle_copy_mode
 
 ## Use Case Recommendations
 
-### Choose WezTerm If:
+### Choose WezTerm If
 
 ✅ **Complex Configuration Needs:**
 
@@ -349,7 +343,7 @@ keybind = ctrl+x>[=toggle_copy_mode
 
 **Example User:** DevOps engineer with complex multi-environment workflow, using Windows/Linux/macOS.
 
-### Choose Ghostty If:
+### Choose Ghostty If
 
 ✅ **Performance Priority:**
 
@@ -380,33 +374,27 @@ keybind = ctrl+x>[=toggle_copy_mode
 ### From WezTerm to Ghostty
 
 - [ ] **Config Format:**
-
   - Convert `wezterm.lua` to `config` (INI-like)
   - Remove Lua logic (use shell scripts if needed)
 
 - [ ] **Keybindings:**
-
   - Convert `{ key = "c", mods = "LEADER" }` to `ctrl+x>c`
   - Add explicit `text:` for Ctrl+Z, Ctrl+J
   - Verify leader key sequence notation
 
 - [ ] **Font:**
-
   - Convert `font_with_fallback` to multiple `font-family` lines
   - Match `font-size`
 
 - [ ] **Theme:**
-
   - Use Ghostty's built-in theme or define custom palette
   - Match `background-opacity`
 
 - [ ] **Splits/Tabs:**
-
   - Verify `new_split:down` vs `new_split:right` direction
   - Test tab switching keybindings
 
 - [ ] **Copy Mode:**
-
   - Test Vim keys work by default
   - Add custom bindings if needed
 
@@ -419,33 +407,27 @@ keybind = ctrl+x>[=toggle_copy_mode
 ### From Ghostty to WezTerm
 
 - [ ] **Config Format:**
-
   - Create `wezterm.lua` entry point
   - Convert INI config to Lua tables
 
 - [ ] **Keybindings:**
-
   - Convert `ctrl+x>c` to `{ key = "c", mods = "LEADER" }`
   - Remove explicit `text:` (WezTerm handles internally)
   - Define `leader` table
 
 - [ ] **Font:**
-
   - Use `font_with_fallback` for font family array
   - Match `font_size`
 
 - [ ] **Theme:**
-
   - Use `color_scheme` or define custom palette
   - Match `window_background_opacity`
 
 - [ ] **Splits/Tabs:**
-
   - Use `act.SplitVertical` / `act.SplitHorizontal`
   - Define tab switching actions
 
 - [ ] **Copy Mode:**
-
   - Define `copy_mode` key table with Vim keys
   - Customize as needed
 
@@ -459,17 +441,14 @@ keybind = ctrl+x>[=toggle_copy_mode
 ### WezTerm → Ghostty
 
 1. **Missing Ctrl+Z/Ctrl+J Config:**
-
    - WezTerm: Handled automatically
    - Ghostty: Must add `text:\x1a` and `text:\x0a` explicitly
 
 2. **Leader Key Notation:**
-
    - WezTerm: `{ key = "c", mods = "LEADER" }`
    - Ghostty: `ctrl+x>c` (different syntax)
 
 3. **Action Names:**
-
    - WezTerm: `act.SpawnTab`, `act.SplitVertical`
    - Ghostty: `new_tab`, `new_split:down`
 
@@ -479,15 +458,12 @@ keybind = ctrl+x>[=toggle_copy_mode
 ### Ghostty → WezTerm
 
 1. **No INI Config:**
-
    - Must learn Lua basics for WezTerm config
 
 2. **More Abstraction:**
-
    - Can't send raw bytes directly (use `SendKey` action)
 
 3. **Slower Startup:**
-
    - WezTerm ~800ms vs Ghostty ~400ms
 
 4. **More Memory:**

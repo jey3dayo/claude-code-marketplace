@@ -162,12 +162,15 @@ keybind = ctrl+x>r=reload_config
 
 1. Check config: `keybind = ctrl+z=text:\x1a`
 2. Verify with `cat` command:
+
    ```bash
    cat
    # Press Ctrl+Z
    # Should see: ^Z
    ```
+
 3. Test with actual process:
+
    ```bash
    sleep 100
    # Press Ctrl+Z
@@ -182,11 +185,13 @@ keybind = ctrl+x>r=reload_config
 
 1. Check config: `keybind = ctrl+j=text:\x0a`
 2. Verify with `cat` command:
+
    ```bash
    cat
    # Type text, press Ctrl+J
    # Should behave like Enter (newline)
    ```
+
 3. Test in Claude Code interactive prompt
 
 ### Font Not Loading
@@ -196,11 +201,14 @@ keybind = ctrl+x>r=reload_config
 **Solution:**
 
 1. Verify font installed:
+
    ```bash
    fc-list | grep "UDEV Gothic"
    ```
+
 2. Use exact font family name from `fc-list`
 3. Add multiple fallbacks:
+
    ```ini
    font-family = "UDEV Gothic 35NFLG"
    font-family = "Inconsolata Nerd Font Mono"
@@ -232,4 +240,4 @@ This skill follows the [Agent Skills specification](https://agentskills.io):
 
 ## License
 
-MIT License - see [LICENSE](../../LICENSE) in repository root.
+MIT License

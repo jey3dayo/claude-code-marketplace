@@ -13,6 +13,7 @@ yamllint = 'latest'
 "npm:prettier" = '3.6.2'
 "npm:markdownlint-cli2" = 'latest'
 "npm:markdown-link-check" = 'latest'
+taplo = 'latest'
 
 # ========================================
 # コマンド（実際の処理を行うタスク）
@@ -27,6 +28,10 @@ run = "prettier --write --cache --log-level warn '**/*.{md,json,yml,yaml}'"
 description = "Markdownlintで自動修正"
 run = "markdownlint-cli2 --fix \"**/*.md\" \"#**/node_modules/**\""
 
+[tasks."format:toml"]
+description = "TOMLファイルをフォーマット"
+run = "taplo format"
+
 # --- Lint Commands ---
 [tasks."lint:prettier"]
 description = "Prettierでチェック"
@@ -40,6 +45,10 @@ run = "markdownlint-cli2 \"**/*.md\" \"#**/node_modules/**\""
 description = "YAMLファイルをチェック"
 run = "yamllint -f parsable ."
 
+[tasks."lint:toml"]
+description = "TOMLファイルをチェック"
+run = "taplo lint"
+
 [tasks."lint:links"]
 description = "Markdownリンクチェック（個別実行推奨・時間がかかるため）"
 run = "fd -e md -t f '' . -E node_modules -X markdown-link-check -c .markdown-link-check.json -q"
@@ -50,11 +59,11 @@ run = "fd -e md -t f '' . -E node_modules -X markdown-link-check -c .markdown-li
 
 [tasks.format]
 description = "すべてのフォーマットを実行（並列）"
-depends = ["format:prettier", "format:markdown"]
+depends = ["format:prettier", "format:markdown", "format:toml"]
 
 [tasks.lint]
 description = "すべてのlintを実行（並列・links除く）"
-depends = ["lint:prettier", "lint:markdown", "lint:yaml"]
+depends = ["lint:prettier", "lint:markdown", "lint:yaml", "lint:toml"]
 
 [tasks."lint:all"]
 description = "すべてのlintを実行（リンクチェック含む）"

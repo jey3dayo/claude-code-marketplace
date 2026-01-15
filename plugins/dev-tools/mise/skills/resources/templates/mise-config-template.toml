@@ -52,10 +52,10 @@ RUST_BACKTRACE = "1"
 # ========================================
 
 # Node.js - JavaScript/TypeScript runtime
-node = "latest"           # Or pin: "22.0.0" for reproducibility
+node = "latest" # Or pin: "22.0.0" for reproducibility
 
 # Python - Python interpreter
-python = "latest"         # Or pin: "3.12.0"
+python = "latest" # Or pin: "3.12.0"
 
 # Ruby - Ruby interpreter
 # ruby = "latest"
@@ -77,7 +77,7 @@ python = "latest"         # Or pin: "3.12.0"
 # ========================================
 
 # Version Control
-github-cli = "latest"     # gh command
+github-cli = "latest" # gh command
 # gitlab-cli = "latest"   # glab command
 
 # Development Tools
