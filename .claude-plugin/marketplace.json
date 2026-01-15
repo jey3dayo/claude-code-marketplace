@@ -132,6 +132,142 @@
       "author": {
         "name": "jey3dayo"
       }
+    },
+    {
+      "name": "agent-creator",
+      "source": "./plugins/dev-tools/agent-creator",
+      "description": "サブエージェント定義の作成ガイド。構造、設計パターン、ツールアクセス管理を提供",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" },
+      "strict": false
+    },
+    {
+      "name": "browser-testing",
+      "source": "./plugins/dev-tools/browser-testing",
+      "description": "Chrome MCPを使用したブラウザ自動テスト。認証フロー、UI操作、localhost検証",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" },
+      "strict": false
+    },
+    {
+      "name": "ci-diagnostics",
+      "source": "./plugins/dev-tools/ci-diagnostics",
+      "description": "GitHub Actions CI失敗の診断と修正プラン生成",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" },
+      "strict": false
+    },
+    {
+      "name": "code-quality-improvement",
+      "source": "./plugins/dev-tools/code-quality-improvement",
+      "description": "体系的なコード品質改善スキル。ESLintエラー修正、型安全性向上、コード品質向上のワークフロー",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" },
+      "strict": false
+    },
+    {
+      "name": "command-creator",
+      "source": "./plugins/dev-tools/command-creator",
+      "description": "効果的なslashコマンドの作成ガイド。構造、デザインパターン、ベストプラクティス",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" },
+      "strict": false
+    },
+    {
+      "name": "doc-standards",
+      "source": "./plugins/dev-tools/doc-standards",
+      "description": "ドキュメント標準化フレームワーク。メタデータ、タグ階層、サイズ管理、品質チェック",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" },
+      "strict": false
+    },
+    {
+      "name": "docs-manager",
+      "source": "./plugins/dev-tools/docs-manager",
+      "description": "ドキュメント検証・管理。メタデータ、タグ、サイズ、リンク検証",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" },
+      "strict": false
+    },
+    {
+      "name": "dotfiles-integration",
+      "source": "./plugins/dev-tools/dotfiles-integration",
+      "description": "ドットファイルのクロスツール統合パターン。Shell/Editor/Terminal相互作用の評価",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" },
+      "strict": false
+    },
+    {
+      "name": "markdown-docs",
+      "source": "./plugins/dev-tools/markdown-docs",
+      "description": "Markdownドキュメントレビュー・改善。文章品質、構造、技術的正確性",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" },
+      "strict": false
+    },
+    {
+      "name": "pr-review-automation",
+      "source": "./plugins/dev-tools/pr-review-automation",
+      "description": "GitHub PRレビューコメントの自動処理。CodeRabbit/人間コメントの分類と修正",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" },
+      "strict": false
+    },
+    {
+      "name": "rules-creator",
+      "source": "./plugins/dev-tools/rules-creator",
+      "description": "ルール・steering・hookifyの作成ガイド。4種類のルールタイプの使い分け",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" },
+      "strict": false
+    },
+    {
+      "name": "security",
+      "source": "./plugins/dev-tools/security",
+      "description": "セキュリティ-focusedコードレビュー。OWASP Top 10準拠、入力検証、認証/認可",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" },
+      "strict": false
+    },
+    {
+      "name": "semantic-analysis",
+      "source": "./plugins/dev-tools/semantic-analysis",
+      "description": "Serena MCP使用の意味的コード解析。API整合性、アーキテクチャ境界、依存関係健全性",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" },
+      "strict": false
+    },
+    {
+      "name": "tsr",
+      "source": "./plugins/dev-tools/tsr",
+      "description": "未使用TypeScript/Reactコードの検出・削除。TSRツール活用",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" },
+      "strict": false
+    },
+    {
+      "name": "wezterm",
+      "source": "./plugins/dev-tools/wezterm",
+      "description": "WezTerm設定レビュー。GPU加速、キーバインド、テーマ統合、クロスプラットフォーム互換性",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" },
+      "strict": false
+    },
+    {
+      "name": "mcp-tools",
+      "source": "./plugins/docs/mcp-tools",
+      "description": "MCPサーバーセットアップ・セキュリティガイド。設定、インストール、環境変数管理",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" },
+      "strict": false
+    },
+    {
+      "name": "claude-marketplace-sync",
+      "source": "./plugins/utils/claude-marketplace-sync",
+      "description": "Claude Code marketplaceプラグイン/スキル同期管理",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" },
+      "strict": false
     }
   ]
 }
