@@ -4,16 +4,34 @@
 
 ## クイックスタート
 
+### オプション1: ローカルディレクトリ（開発・即時反映）
+
 ```bash
 # 1. リポジトリをクローン
-REPOS_DIR=~/src/github.com/jey3dayo/claude-code-marketplace
-git clone https://github.com/jey3dayo/claude-code-marketplace.git $REPOS_DIR
+git clone https://github.com/jey3dayo/claude-code-marketplace.git ~/path/to/marketplace
 
-# 2. Claude Code起動後、マーケットプレイスを追加
-/plugin marketplace add $REPOS_DIR
+# 2. Claude Code起動後、マーケットプレイスを追加（変更は即座に反映）
+/plugin marketplace add ~/path/to/marketplace
 
 # 3. プラグインをインストール
 /plugin install @jey3dayo
+```
+
+### オプション2: GitHub URL（本番利用）
+
+```bash
+# GitHubから直接追加
+/plugin marketplace add https://github.com/jey3dayo/claude-code-marketplace
+
+# プラグインをインストール
+/plugin install @jey3dayo
+```
+
+### オプション3: 単一プラグイン開発
+
+```bash
+# 特定プラグインを直接ロード（最も高速）
+cc --plugin-dir ~/path/to/marketplace/plugins/dev-tools/dotenvx
 ```
 
 ## 利用可能なプラグイン
