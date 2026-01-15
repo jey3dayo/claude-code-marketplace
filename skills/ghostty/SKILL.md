@@ -15,7 +15,6 @@ Specialized skill for Ghostty terminal emulator configuration. Provides best pra
 Ghostty offers two approaches for sending key sequences:
 
 1. **`text:` (Raw Control Characters)**
-
    - Sends raw bytes directly to the shell/application
    - Bypasses terminal protocol layer
    - Use for: Job control signals, application-specific keys
@@ -239,17 +238,14 @@ palette = 7=#a89984  # white
 ### Key Differences
 
 1. **Configuration Language:**
-
    - WezTerm: Lua scripts (`wezterm.lua`)
    - Ghostty: INI-like config file (`config`)
 
 2. **Key Actions:**
-
    - WezTerm: `act.SendKey`, `act.SpawnTab`, etc.
    - Ghostty: Direct actions (`new_tab`, `goto_split`, etc.)
 
 3. **Leader Key:**
-
    - WezTerm: `leader = { key = "x", mods = "CTRL" }`
    - Ghostty: Sequence notation (`ctrl+x>c`)
 
@@ -299,6 +295,7 @@ palette = 7=#a89984  # white
 1. Verify font is installed: `fc-list | grep "UDEV Gothic"`
 2. Use exact font family name from `fc-list`
 3. Add multiple fallback fonts:
+
    ```ini
    font-family = "UDEV Gothic 35NFLG"
    font-family = "Inconsolata Nerd Font Mono"

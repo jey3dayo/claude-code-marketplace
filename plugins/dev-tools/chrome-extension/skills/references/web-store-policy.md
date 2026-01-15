@@ -111,12 +111,12 @@ Privacy policy must include:
 ```javascript
 // ALLOWED: Minified with esbuild/webpack
 function a(b) {
-  return b + 1;
+  return b + 1
 }
 
 // PROHIBITED: Obfuscated
 function _0x1a2b() {
-  return eval(atob("..."));
+  return eval(atob('...'))
 }
 ```
 
@@ -384,11 +384,7 @@ For issues or feature requests, visit: [support URL]
 
 ```json
 {
-  "host_permissions": [
-    "https://github.com/*",
-    "https://gitlab.com/*",
-    "https://bitbucket.org/*"
-  ]
+  "host_permissions": ["https://github.com/*", "https://gitlab.com/*", "https://bitbucket.org/*"]
 }
 ```
 

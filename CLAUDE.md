@@ -11,7 +11,6 @@
 ### 基本マニュアル
 
 - **[プラグインマーケットプレイス](https://code.claude.com/docs/en/plugin-marketplaces)** - マーケットプレイスの仕組みと構造
-
   - `marketplace.json` の詳細仕様
   - プラグインの登録方法
   - マーケットプレイスの配布方法
@@ -24,7 +23,6 @@
 ### コンポーネント別マニュアル
 
 - **[スラッシュコマンド](https://code.claude.com/docs/en/slash-commands)** - カスタムコマンドの作成方法
-
   - コマンドファイル形式（フロントマター）
   - 引数の処理方法
   - 許可ツールの指定
@@ -99,8 +97,9 @@ mkdir -p plugins/{category}/{plugin_name}/agents     # エージェントがあ�
   "version": "1.0.0",
   "description": "プラグインの説明",
   "author": { "name": "your_name" },
-  "commandsPath": "commands",
-  "agentsPath": "agents"
+  "commands": ["./commands/"],
+  "agents": ["./agents/"],
+  "skills": ["./skills/"]
 }
 ```
 
@@ -180,9 +179,9 @@ model: haiku
   "version": "1.0.0",
   "description": "説明",
   "author": { "name": "author" },
-  "commandsPath": "commands",
-  "agentsPath": "agents",
-  "skillsPath": "skills"
+  "commands": ["./commands/"],
+  "agents": ["./agents/"],
+  "skills": ["./skills/"]
 }
 ```
 

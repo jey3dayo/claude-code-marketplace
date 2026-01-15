@@ -72,7 +72,7 @@ $ dotenvx encrypt -f .env.production
 Generated key: a2e09d2d781b9a4c196d492d59f4ab61c43e0945fc5fd842bc0e4f381664b9fa
 ```
 
-2. **File Format** (encrypted):
+1. **File Format** (encrypted):
 
 ```
 #/-------------------[DOTENV_PUBLIC_KEY]--------------------/
@@ -82,7 +82,7 @@ DATABASE_URL="encrypted:BMx5o...jQ6x5Dw"
 AWS_SECRET="encrypted:kL8pN...vM3wZy"
 ```
 
-3. **Key Storage** (`.env.keys`):
+1. **Key Storage** (`.env.keys`):
 
 ```
 DOTENV_PRIVATE_KEY_PRODUCTION="a2e09d2d781b9a4c196d492d59f4ab61..."
@@ -172,7 +172,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: '20'
 
       - name: Install dependencies
         run: npm ci
@@ -286,7 +286,7 @@ npm install --save-dev @dotenvx/dotenvx
 
 ```javascript
 // Old (dotenv)
-require("dotenv").config({ path: ".env.production" });
+require('dotenv').config({ path: '.env.production' })
 
 // New (dotenvx) - No code change needed!
 // Just run: dotenvx run -f .env.production -- node app.js

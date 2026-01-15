@@ -115,23 +115,23 @@ Complete guide for migrating Chrome Extensions from Manifest V2 to V3.
 
 ```javascript
 // background.js
-chrome.browserAction.onClicked.addListener((tab) => {
+chrome.browserAction.onClicked.addListener(tab => {
   chrome.tabs.executeScript(tab.id, {
-    file: "content.js",
-  });
-});
+    file: 'content.js',
+  })
+})
 ```
 
 **After (V3)**:
 
 ```javascript
 // background.js (service worker)
-chrome.action.onClicked.addListener((tab) => {
+chrome.action.onClicked.addListener(tab => {
   chrome.scripting.executeScript({
     target: { tabId: tab.id },
-    files: ["content.js"],
-  });
-});
+    files: ['content.js'],
+  })
+})
 ```
 
 ### 2.2 Content Security Policy (CSP)
@@ -147,16 +147,16 @@ chrome.action.onClicked.addListener((tab) => {
 
 ```javascript
 // Before (V2) - UNSAFE
-const code = `alert('Hello')`;
-eval(code);
+const code = `alert('Hello')`
+eval(code)
 
 // After (V3) - Use declarative approaches
 chrome.scripting.executeScript({
   target: { tabId: tab.id },
   func: () => {
-    alert("Hello");
+    alert('Hello')
   },
-});
+})
 ```
 
 ### 2.3 Callback → Promise/async-await
@@ -164,12 +164,12 @@ chrome.scripting.executeScript({
 **Before (V2)**:
 
 ```javascript
-chrome.tabs.query({ active: true }, (tabs) => {
-  const tab = tabs[0];
-  chrome.tabs.sendMessage(tab.id, { type: "greeting" }, (response) => {
-    console.log(response);
-  });
-});
+chrome.tabs.query({ active: true }, tabs => {
+  const tab = tabs[0]
+  chrome.tabs.sendMessage(tab.id, { type: 'greeting' }, response => {
+    console.log(response)
+  })
+})
 ```
 
 **After (V3)**:
@@ -177,9 +177,9 @@ chrome.tabs.query({ active: true }, (tabs) => {
 ```typescript
 // Promisified approach
 async function sendGreeting() {
-  const [tab] = await chrome.tabs.query({ active: true });
-  const response = await chrome.tabs.sendMessage(tab.id, { type: "greeting" });
-  console.log(response);
+  const [tab] = await chrome.tabs.query({ active: true })
+  const response = await chrome.tabs.sendMessage(tab.id, { type: 'greeting' })
+  console.log(response)
 }
 ```
 
@@ -188,21 +188,21 @@ async function sendGreeting() {
 **Before (V2)**:
 
 ```javascript
-const xhr = new XMLHttpRequest();
-xhr.open("GET", "https://api.example.com/data");
+const xhr = new XMLHttpRequest()
+xhr.open('GET', 'https://api.example.com/data')
 xhr.onload = () => {
-  console.log(xhr.responseText);
-};
-xhr.send();
+  console.log(xhr.responseText)
+}
+xhr.send()
 ```
 
 **After (V3)**:
 
 ```typescript
 async function fetchData() {
-  const response = await fetch("https://api.example.com/data");
-  const data = await response.json();
-  console.log(data);
+  const response = await fetch('https://api.example.com/data')
+  const data = await response.json()
+  console.log(data)
 }
 ```
 
@@ -237,20 +237,20 @@ async function fetchData() {
 
 ```typescript
 // Before (V2) - UNSAFE in V3
-let userSettings = {};
+let userSettings = {}
 
-chrome.runtime.onMessage.addListener((message) => {
-  if (message.type === "saveSettings") {
-    userSettings = message.settings;
+chrome.runtime.onMessage.addListener(message => {
+  if (message.type === 'saveSettings') {
+    userSettings = message.settings
   }
-});
+})
 
 // After (V3) - SAFE
-chrome.runtime.onMessage.addListener(async (message) => {
-  if (message.type === "saveSettings") {
-    await chrome.storage.local.set({ userSettings: message.settings });
+chrome.runtime.onMessage.addListener(async message => {
+  if (message.type === 'saveSettings') {
+    await chrome.storage.local.set({ userSettings: message.settings })
   }
-});
+})
 ```
 
 ### 4.2 Cache Management
@@ -259,24 +259,24 @@ Implement TTL and size limits:
 
 ```typescript
 interface CacheEntry<T> {
-  data: T;
-  timestamp: number;
-  ttl: number; // milliseconds
+  data: T
+  timestamp: number
+  ttl: number // milliseconds
 }
 
 async function getCachedData<T>(key: string): Promise<T | null> {
-  const result = await chrome.storage.local.get(key);
-  const entry: CacheEntry<T> | undefined = result[key];
+  const result = await chrome.storage.local.get(key)
+  const entry: CacheEntry<T> | undefined = result[key]
 
-  if (!entry) return null;
+  if (!entry) return null
 
-  const now = Date.now();
+  const now = Date.now()
   if (now - entry.timestamp > entry.ttl) {
-    await chrome.storage.local.remove(key);
-    return null;
+    await chrome.storage.local.remove(key)
+    return null
   }
 
-  return entry.data;
+  return entry.data
 }
 
 async function setCachedData<T>(key: string, data: T, ttl: number = 3600000) {
@@ -284,8 +284,8 @@ async function setCachedData<T>(key: string, data: T, ttl: number = 3600000) {
     data,
     timestamp: Date.now(),
     ttl,
-  };
-  await chrome.storage.local.set({ [key]: entry });
+  }
+  await chrome.storage.local.set({ [key]: entry })
 }
 ```
 
