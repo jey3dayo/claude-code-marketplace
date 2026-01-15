@@ -34,9 +34,8 @@
 ## 確認済み
 
 - [ ] 動作確認完了
-- [ ] 品質チェック通過 (`pnpm lint && pnpm type-check && pnpm build`)
-- [ ] Terraform変更時: `terraform validate && terraform plan`
+- [ ] 品質チェック通過 (`mise lint && mise format`)
+- [ ] プラグイン構文チェック (`/plugin list` で正常表示)
+- [ ] marketplace.json 構文チェック
 
 ---
-
-<!-- CodeRabbitの自動生成コメントはここに挿入されます -->
