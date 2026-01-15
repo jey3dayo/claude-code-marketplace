@@ -1,0 +1,71 @@
+# ========================================
+# Claude Code Marketplace - mise設定
+# ========================================
+
+# ========================================
+# ツール管理
+# ========================================
+
+[tools]
+node = "24"
+fd = 'latest'
+yamllint = 'latest'
+"npm:prettier" = '3.6.2'
+"npm:markdownlint-cli2" = 'latest'
+"npm:markdown-link-check" = 'latest'
+
+# ========================================
+# コマンド（実際の処理を行うタスク）
+# ========================================
+
+# --- Format Commands ---
+[tasks."format:prettier"]
+description = "Prettierでフォーマット"
+run = "prettier --write --cache --log-level warn '**/*.{md,json,yml,yaml}'"
+
+[tasks."format:markdown"]
+description = "Markdownlintで自動修正"
+run = "markdownlint-cli2 --fix '**/*.md' '!node_modules'"
+
+# --- Lint Commands ---
+[tasks."lint:prettier"]
+description = "Prettierでチェック"
+run = "prettier --check --cache --log-level warn '**/*.{md,json,yml,yaml}'"
+
+[tasks."lint:markdown"]
+description = "Markdownlintでチェック"
+run = "markdownlint-cli2 '**/*.md' '!node_modules'"
+
+[tasks."lint:yaml"]
+description = "YAMLファイルをチェック"
+run = "yamllint -f parsable ."
+
+[tasks."lint:links"]
+description = "Markdownリンクチェック（個別実行推奨・時間がかかるため）"
+run = "fd -e md -t f '' . -E node_modules -X markdown-link-check -c .markdown-link-check.json -q"
+
+# ========================================
+# 集約タスク（まとめ実行のショートカット）
+# ========================================
+
+[tasks.format]
+description = "すべてのフォーマットを実行（並列）"
+depends = ["format:prettier", "format:markdown"]
+
+[tasks.lint]
+description = "すべてのlintを実行（並列・links除く）"
+depends = ["lint:prettier", "lint:markdown", "lint:yaml"]
+
+[tasks."lint:all"]
+description = "すべてのlintを実行（リンクチェック含む）"
+depends = ["lint", "lint:links"]
+
+[tasks.ci]
+description = "CI相当のチェックをまとめて実行"
+depends = ["format", "lint"]
+run = "echo '✅ CI checks completed'"
+
+[tasks."+all"]
+description = "すべてのチェックを実行（リンクチェック含む）"
+depends = ["format", "lint:all"]
+run = "echo '✅ All checks completed'"
