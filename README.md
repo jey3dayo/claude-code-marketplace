@@ -43,10 +43,15 @@ cc --plugin-dir ~/path/to/marketplace/plugins/dev-tools/dotenvx
   - GitHub PRコメント対応 (gh-address-comments)
   - Notion統合 (4種)
 
-**注意**: このプラグインは Gitサブモジュールを使用しています。クローン時は `--recursive` オプションを使用してください。
+**注意**: このプラグインは Gitサブモジュールを使用しています。
 
 ```bash
+# クローン時にサブモジュールを含める
 git clone --recursive https://github.com/jey3dayo/claude-code-marketplace.git
+
+# サブモジュール更新（mise使用）
+mise run submodule:update   # 最新に更新（普段はこれだけ）
+mise run submodule:init     # 初期化（--recursive忘れた時）
 ```
 
 ### 開発ツール (dev-tools)

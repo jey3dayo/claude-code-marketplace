@@ -82,12 +82,21 @@ claude-code-marketplace/
 
 ### サブモジュールの更新
 
+#### mise を使った管理（推奨）
+
+```bash
+# サブモジュールを最新に更新（普段はこれだけ）
+mise run submodule:update
+
+# 初期化（クローン時に --recursive を忘れた場合のみ）
+mise run submodule:init
+```
+
+#### 直接 git コマンドで管理
+
 ```bash
 # 全てのサブモジュールを更新
-git submodule update --remote
-
-# 特定のサブモジュールを更新
-git submodule update --remote plugins/openai-skills
+git submodule update --remote --merge
 
 # クローン時にサブモジュールを含める
 git clone --recursive https://github.com/jey3dayo/claude-code-marketplace.git

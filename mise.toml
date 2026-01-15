@@ -53,6 +53,15 @@ run = "taplo lint"
 description = "Markdownリンクチェック（個別実行推奨・時間がかかるため）"
 run = "fd -e md -t f '' . -E node_modules -X markdown-link-check -c .markdown-link-check.json -q"
 
+# --- Git Submodule Commands ---
+[tasks."submodule:update"]
+description = "サブモジュールを最新に更新"
+run = "git submodule update --remote --merge"
+
+[tasks."submodule:init"]
+description = "サブモジュールを初期化（クローン後の初回のみ）"
+run = "git submodule update --init --recursive"
+
 # ========================================
 # 集約タスク（まとめ実行のショートカット）
 # ========================================
