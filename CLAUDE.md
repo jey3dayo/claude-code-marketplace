@@ -299,7 +299,3 @@ model: haiku
 - [Claude Code プラグインリファレンス](https://code.claude.com/docs/en/plugins-reference)
 - [プラグインマーケットプレイス](https://code.claude.com/docs/en/plugin-marketplaces)
 - [サブエージェント](https://code.claude.com/docs/en/sub-agents)
-
-```
-
-```
