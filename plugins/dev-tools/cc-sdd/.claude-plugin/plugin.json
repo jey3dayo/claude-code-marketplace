@@ -6,7 +6,7 @@
     "name": "jey3dayo"
   },
   "commands": ["./commands/"],
-  "skills": ["./skills/"],
+  "skills": ["./SKILL.md"],
   "tags": ["spec-driven", "kiro", "workflow", "requirements", "design", "tasks", "development"],
   "keywords": [
     "kiro",
