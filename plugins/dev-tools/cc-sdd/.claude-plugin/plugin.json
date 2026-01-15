@@ -1,0 +1,9 @@
+{
+  "name": "cc-sdd",
+  "version": "1.0.0",
+  "description": "Kiro形式スペック駆動開発スキル。要件定義から設計、実装タスクまでの一貫したワークフローを提供",
+  "author": {
+    "name": "jey3dayo"
+  },
+  "skillsPath": "skills"
+}

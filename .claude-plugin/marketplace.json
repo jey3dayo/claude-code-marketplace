@@ -1,0 +1,101 @@
+{
+  "name": "jey3dayo",
+  "owner": {
+    "name": "jey3dayo",
+    "email": "j138cm@gmail.com"
+  },
+  "description": "jey3dayo Claude Code Plugin Marketplace",
+  "plugins": [
+    {
+      "name": "knowledge-creator",
+      "source": "./plugins/dev-tools/knowledge-creator",
+      "description": "知識分類・作成システム。Skill/Agent/Command/Rulesの最適フォーマットを自動判定",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" }
+    },
+    {
+      "name": "mise",
+      "source": "./plugins/dev-tools/mise",
+      "description": "mise (mise-en-place) タスクランナー・ツールバージョン管理スキル。mise.toml構成、タスク定義、パッケージ一元管理",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" }
+    },
+    {
+      "name": "deckset",
+      "source": "./plugins/docs/deckset",
+      "description": "Decksetプレゼンテーション作成支援スキル。Deckset特有の構文、画像モディファイア、メタデータ設定をガイド",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" }
+    },
+    {
+      "name": "drawio",
+      "source": "./plugins/docs/drawio",
+      "description": "プロフェッショナルなDraw.ioダイアグラム作成支援。AWS構成図、フローチャート、シーケンス図、ER図をXML形式で生成",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" }
+    },
+    {
+      "name": "docs-write",
+      "source": "./plugins/docs/docs-write",
+      "description": "Markdownドキュメント作成・整形のガイド。mise の docs:fix/docs:format 運用と書き方基準を提供",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" }
+    },
+    {
+      "name": "dotenvx",
+      "source": "./plugins/utils/dotenvx",
+      "description": "AES-256暗号化による安全な環境変数管理。.envファイルをGitに安全にコミット",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" }
+    },
+    {
+      "name": "react",
+      "source": "./plugins/dev-tools/react",
+      "description": "Reactプロジェクトレビュー（Context7統合）",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" }
+    },
+    {
+      "name": "react-grid-layout",
+      "source": "./plugins/dev-tools/react-grid-layout",
+      "description": "react-grid-layout実装パターン（Context7統合）",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" }
+    },
+    {
+      "name": "chrome-extension",
+      "source": "./plugins/dev-tools/chrome-extension",
+      "description": "Chrome Extension Manifest V3ベストプラクティス（Context7統合）",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" }
+    },
+    {
+      "name": "golang",
+      "source": "./plugins/dev-tools/golang",
+      "description": "Goコードレビュー（Context7統合）",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" }
+    },
+    {
+      "name": "nvim",
+      "source": "./plugins/dev-tools/nvim",
+      "description": "Neovim設定レビュー（Context7統合）",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" }
+    },
+    {
+      "name": "zsh",
+      "source": "./plugins/dev-tools/zsh",
+      "description": "Zsh設定レビュー（Context7統合）",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" }
+    },
+    {
+      "name": "slide-docs",
+      "source": "./plugins/docs/slide-docs",
+      "description": "Markdownプレゼンテーション作成（Marp/Deckset/reveal.js、Context7統合）",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" }
+    }
+  ]
+}

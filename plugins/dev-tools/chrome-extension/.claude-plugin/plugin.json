@@ -1,0 +1,9 @@
+{
+  "name": "chrome-extension",
+  "version": "1.0.0",
+  "description": "Chrome Extension Manifest V3ベストプラクティス（Context7統合）",
+  "author": {
+    "name": "jey3dayo"
+  },
+  "skillsPath": "skills"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "dotenvx",
+  "version": "1.0.0",
+  "description": "AES-256暗号化による安全な環境変数管理。.envファイルをGitに安全にコミット",
+  "author": { "name": "jey3dayo" },
+  "skillsPath": "skills"
+}
