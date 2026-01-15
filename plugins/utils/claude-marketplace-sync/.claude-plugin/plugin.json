@@ -1,0 +1,9 @@
+{
+  "name": "claude-marketplace-sync",
+  "version": "1.0.0",
+  "description": "Claude Code marketplaceプラグイン/スキル同期管理",
+  "author": {
+    "name": "jey3dayo"
+  },
+  "skills": ["./SKILL.md"]
+}

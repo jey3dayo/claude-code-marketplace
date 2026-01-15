@@ -5,6 +5,8 @@
   "author": {
     "name": "jey3dayo"
   },
+  "commands": ["./commands/"],
+  "skills": ["./skills/"],
   "tags": ["spec-driven", "kiro", "workflow", "requirements", "design", "tasks", "development"],
   "keywords": [
     "kiro",
