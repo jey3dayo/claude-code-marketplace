@@ -1,0 +1,75 @@
+name: Lint & Format
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  # ========================================
+  # Lint & Format with mise
+  # ========================================
+  quality-check:
+    name: Quality Check (mise)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install mise
+        run: |
+          curl https://mise.run | sh
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Cache mise tools
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.local/share/mise
+            ~/.cache/mise
+          key: ${{ runner.os }}-mise-${{ hashFiles('**/mise.toml') }}
+          restore-keys: |
+            ${{ runner.os }}-mise-
+
+      - name: Install tools
+        run: mise install
+
+      - name: Run format check
+        run: mise run format
+
+      - name: Run lint
+        run: mise run lint
+
+  # ========================================
+  # Link Check (Optional - Longer running)
+  # ========================================
+  markdown-link-check:
+    name: Markdown Link Check
+    runs-on: ubuntu-latest
+    # リンクチェックは時間がかかるため、PR時のみ実行
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install mise
+        run: |
+          curl https://mise.run | sh
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Cache mise tools
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.local/share/mise
+            ~/.cache/mise
+          key: ${{ runner.os }}-mise-${{ hashFiles('**/mise.toml') }}
+          restore-keys: |
+            ${{ runner.os }}-mise-
+
+      - name: Install tools
+        run: mise install
+
+      - name: Run link check
+        run: mise run lint:links
