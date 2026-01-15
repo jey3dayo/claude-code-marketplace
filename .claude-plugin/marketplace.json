@@ -132,6 +132,33 @@
       "author": {
         "name": "jey3dayo"
       }
+    },
+    {
+      "name": "markdown-docs",
+      "source": "./plugins/dev-tools/markdown-docs",
+      "description": "Markdownドキュメント作成スキル",
+      "version": "1.0.0",
+      "author": {
+        "name": "jey3dayo"
+      }
+    },
+    {
+      "name": "pr-review-automation",
+      "source": "./plugins/dev-tools/pr-review-automation",
+      "description": "PRレビュー自動化システム",
+      "version": "1.0.0",
+      "author": {
+        "name": "jey3dayo"
+      }
+    },
+    {
+      "name": "rules-creator",
+      "source": "./plugins/dev-tools/rules-creator",
+      "description": "ルール・ステアリング作成フレームワーク",
+      "version": "1.0.0",
+      "author": {
+        "name": "jey3dayo"
+      }
     }
   ]
 }

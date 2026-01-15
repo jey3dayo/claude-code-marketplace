@@ -1,0 +1,7 @@
+{
+  "name": "rules-creator",
+  "version": "1.0.0",
+  "description": "ルール・ステアリング作成フレームワーク",
+  "author": { "name": "jey3dayo" },
+  "skills": ["./"]
+}
