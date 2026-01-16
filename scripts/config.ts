@@ -12,4 +12,4 @@
  */
 export const EXCLUDED_CATEGORIES: string[] = [
   'openai-skills', // サブモジュール: OpenAI公式スキル（上流で管理）
-];
+]

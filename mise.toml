@@ -35,7 +35,7 @@ run = "taplo format"
 # --- Lint Commands ---
 [tasks."lint:prettier"]
 description = "Prettierでチェック"
-run = "prettier --check --cache --log-level warn '**/*.{md,json,yml,yaml}'"
+run = "prettier --check --cache --log-level warn '**/*.{md,json,yml,yaml,ts}'"
 
 [tasks."lint:markdown"]
 description = "Markdownlintでチェック"
