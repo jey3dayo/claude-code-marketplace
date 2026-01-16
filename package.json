@@ -1,0 +1,13 @@
+{
+  "name": "claude-code-marketplace",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate:plugin-json": "bun run scripts/generate-plugin-json.ts",
+    "generate:plugin-json:dry-run": "bun run scripts/generate-plugin-json.ts --dry-run"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}

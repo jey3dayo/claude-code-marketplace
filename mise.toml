@@ -62,6 +62,15 @@ run = "git submodule update --remote --merge"
 description = "サブモジュールを初期化（クローン後の初回のみ）"
 run = "git submodule update --init --recursive"
 
+# --- Plugin Management Commands ---
+[tasks."plugin:generate"]
+description = "plugin.jsonのskills配列をディレクトリ構造から自動生成"
+run = "bun run scripts/generate-plugin-json.ts"
+
+[tasks."plugin:generate:dry-run"]
+description = "plugin.json変更内容をプレビュー（書き込みなし）"
+run = "bun run scripts/generate-plugin-json.ts --dry-run"
+
 # ========================================
 # 集約タスク（まとめ実行のショートカット）
 # ========================================
