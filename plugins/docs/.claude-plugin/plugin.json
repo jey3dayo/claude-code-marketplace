@@ -1,0 +1,15 @@
+{
+  "name": "docs-bundle",
+  "version": "1.0.0",
+  "description": "ドキュメント作成カテゴリの全スキル（5プラグイン）。Deckset、Draw.io、Markdownドキュメント、MCPツール、スライド作成スキルをまとめてインストール",
+  "author": {
+    "name": "jey3dayo"
+  },
+  "skills": [
+    "./deckset/skills/",
+    "./docs-write/skills/",
+    "./drawio/skills/",
+    "./mcp-tools/",
+    "./slide-docs/skills/"
+  ]
+}

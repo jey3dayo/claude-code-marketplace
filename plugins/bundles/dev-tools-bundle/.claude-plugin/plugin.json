@@ -1,9 +1,0 @@
-{
-  "name": "dev-tools-bundle",
-  "version": "1.0.0",
-  "description": "開発ツールスキル一括インストール（27スキル）。React、TypeScript、Go、コードレビュー、mise等の開発支援スキルをまとめてインストール",
-  "author": {
-    "name": "jey3dayo"
-  },
-  "skills": ["./skills/"]
-}

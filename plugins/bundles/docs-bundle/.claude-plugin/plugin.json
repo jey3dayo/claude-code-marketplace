@@ -1,9 +1,0 @@
-{
-  "name": "docs-bundle",
-  "version": "1.0.0",
-  "description": "ドキュメント作成スキル一括インストール（5スキル）。Deckset、Draw.io、Markdownドキュメント、MCPツール、スライド作成スキルをまとめてインストール",
-  "author": {
-    "name": "jey3dayo"
-  },
-  "skills": ["./skills/"]
-}

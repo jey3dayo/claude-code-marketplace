@@ -4,107 +4,28 @@
     "name": "jey3dayo",
     "email": "j138cm@gmail.com"
   },
-  "description": "jey3dayo Claude Code Plugin Marketplace",
+  "description": "jey3dayo Claude Code Plugin Marketplace - カテゴリバンドル形式",
   "plugins": [
     {
-      "name": "knowledge-creator",
-      "source": "./plugins/dev-tools/knowledge-creator",
-      "description": "知識分類・作成システム。Skill/Agent/Command/Rulesの最適フォーマットを自動判定",
+      "name": "dev-tools-bundle",
+      "source": "./plugins/dev-tools",
+      "description": "開発ツールカテゴリの全スキル（27プラグイン）。React、TypeScript、Go、コードレビュー、mise等の開発支援スキルをまとめてインストール",
       "version": "1.0.0",
       "author": { "name": "jey3dayo" }
     },
     {
-      "name": "mise",
-      "source": "./plugins/dev-tools/mise",
-      "description": "mise (mise-en-place) タスクランナー・ツールバージョン管理スキル。mise.toml構成、タスク定義、パッケージ一元管理",
+      "name": "docs-bundle",
+      "source": "./plugins/docs",
+      "description": "ドキュメント作成カテゴリの全スキル（5プラグイン）。Deckset、Draw.io、Markdownドキュメント、MCPツール、スライド作成スキルをまとめてインストール",
       "version": "1.0.0",
       "author": { "name": "jey3dayo" }
     },
     {
-      "name": "deckset",
-      "source": "./plugins/docs/deckset",
-      "description": "Decksetプレゼンテーション作成支援スキル。Deckset特有の構文、画像モディファイア、メタデータ設定をガイド",
+      "name": "utils-bundle",
+      "source": "./plugins/utils",
+      "description": "ユーティリティカテゴリの全スキル（2プラグイン）。dotenvx、Claude Marketplace同期スキルをまとめてインストール",
       "version": "1.0.0",
       "author": { "name": "jey3dayo" }
-    },
-    {
-      "name": "drawio",
-      "source": "./plugins/docs/drawio",
-      "description": "プロフェッショナルなDraw.ioダイアグラム作成支援。AWS構成図、フローチャート、シーケンス図、ER図をXML形式で生成",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" }
-    },
-    {
-      "name": "docs-write",
-      "source": "./plugins/docs/docs-write",
-      "description": "Markdownドキュメント作成・整形のガイド。mise の docs:fix/docs:format 運用と書き方基準を提供",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" }
-    },
-    {
-      "name": "dotenvx",
-      "source": "./plugins/utils/dotenvx",
-      "description": "AES-256暗号化による安全な環境変数管理。.envファイルをGitに安全にコミット",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" }
-    },
-    {
-      "name": "react",
-      "source": "./plugins/dev-tools/react",
-      "description": "Reactプロジェクトレビュー（Context7統合）",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" }
-    },
-    {
-      "name": "react-grid-layout",
-      "source": "./plugins/dev-tools/react-grid-layout",
-      "description": "react-grid-layout実装パターン（Context7統合）",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" }
-    },
-    {
-      "name": "chrome-extension",
-      "source": "./plugins/dev-tools/chrome-extension",
-      "description": "Chrome Extension Manifest V3ベストプラクティス（Context7統合）",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" }
-    },
-    {
-      "name": "golang",
-      "source": "./plugins/dev-tools/golang",
-      "description": "Goコードレビュー（Context7統合）",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" }
-    },
-    {
-      "name": "nvim",
-      "source": "./plugins/dev-tools/nvim",
-      "description": "Neovim設定レビュー（Context7統合）",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" }
-    },
-    {
-      "name": "zsh",
-      "source": "./plugins/dev-tools/zsh",
-      "description": "Zsh設定レビュー（Context7統合）",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" }
-    },
-    {
-      "name": "slide-docs",
-      "source": "./plugins/docs/slide-docs",
-      "description": "Markdownプレゼンテーション作成（Marp/Deckset/reveal.js、Context7統合）",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" }
-    },
-    {
-      "name": "cc-sdd",
-      "source": "./plugins/dev-tools/cc-sdd",
-      "description": "Standardized Kiro-style spec-driven development plugin with configurable directory structure. Provides a consistent workflow from requirements to design to implementation tasks.",
-      "version": "1.0.0",
-      "author": {
-        "name": "jey3dayo"
-      }
     },
     {
       "name": "openai-skills",
@@ -117,190 +38,6 @@
       },
       "homepage": "https://github.com/openai/skills",
       "strict": false
-    },
-    {
-      "name": "code-review",
-      "source": "./plugins/dev-tools/code-review",
-      "description": "包括的なコード品質評価とレビュー。5段階評価システムとプロジェクト固有の基準統合",
-      "version": "1.0.0",
-      "author": {
-        "name": "jey3dayo"
-      }
-    },
-    {
-      "name": "similarity",
-      "source": "./plugins/dev-tools/similarity",
-      "description": "TypeScript/JavaScriptコード類似度検出スキル。重複コード発見とリファクタリング支援",
-      "version": "1.0.0",
-      "author": {
-        "name": "jey3dayo"
-      }
-    },
-    {
-      "name": "typescript",
-      "source": "./plugins/dev-tools/typescript",
-      "description": "TypeScriptプロジェクト専門レビュースキル。型安全性、TypeScriptベストプラクティス、コンパイラオプション評価",
-      "version": "1.0.0",
-      "author": {
-        "name": "jey3dayo"
-      }
-    },
-    {
-      "name": "agent-creator",
-      "source": "./plugins/dev-tools/agent-creator",
-      "description": "サブエージェント定義の作成ガイド。構造、設計パターン、ツールアクセス管理を提供",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" },
-      "strict": false
-    },
-    {
-      "name": "browser-testing",
-      "source": "./plugins/dev-tools/browser-testing",
-      "description": "Chrome MCPを使用したブラウザ自動テスト。認証フロー、UI操作、localhost検証",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" },
-      "strict": false
-    },
-    {
-      "name": "ci-diagnostics",
-      "source": "./plugins/dev-tools/ci-diagnostics",
-      "description": "GitHub Actions CI失敗の診断と修正プラン生成",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" },
-      "strict": false
-    },
-    {
-      "name": "code-quality-improvement",
-      "source": "./plugins/dev-tools/code-quality-improvement",
-      "description": "体系的なコード品質改善スキル。ESLintエラー修正、型安全性向上、コード品質向上のワークフロー",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" },
-      "strict": false
-    },
-    {
-      "name": "command-creator",
-      "source": "./plugins/dev-tools/command-creator",
-      "description": "効果的なslashコマンドの作成ガイド。構造、デザインパターン、ベストプラクティス",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" },
-      "strict": false
-    },
-    {
-      "name": "doc-standards",
-      "source": "./plugins/dev-tools/doc-standards",
-      "description": "ドキュメント標準化フレームワーク。メタデータ、タグ階層、サイズ管理、品質チェック",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" },
-      "strict": false
-    },
-    {
-      "name": "docs-manager",
-      "source": "./plugins/dev-tools/docs-manager",
-      "description": "ドキュメント検証・管理。メタデータ、タグ、サイズ、リンク検証",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" },
-      "strict": false
-    },
-    {
-      "name": "dotfiles-integration",
-      "source": "./plugins/dev-tools/dotfiles-integration",
-      "description": "ドットファイルのクロスツール統合パターン。Shell/Editor/Terminal相互作用の評価",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" },
-      "strict": false
-    },
-    {
-      "name": "markdown-docs",
-      "source": "./plugins/dev-tools/markdown-docs",
-      "description": "Markdownドキュメントレビュー・改善。文章品質、構造、技術的正確性",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" },
-      "strict": false
-    },
-    {
-      "name": "gh-fix-review",
-      "source": "./plugins/dev-tools/gh-fix-review",
-      "description": "GitHub PRレビューコメントの自動処理。CodeRabbit/人間コメントの分類と修正",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" },
-      "strict": false
-    },
-    {
-      "name": "rules-creator",
-      "source": "./plugins/dev-tools/rules-creator",
-      "description": "ルール・steering・hookifyの作成ガイド。4種類のルールタイプの使い分け",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" },
-      "strict": false
-    },
-    {
-      "name": "security",
-      "source": "./plugins/dev-tools/security",
-      "description": "セキュリティ-focusedコードレビュー。OWASP Top 10準拠、入力検証、認証/認可",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" },
-      "strict": false
-    },
-    {
-      "name": "semantic-analysis",
-      "source": "./plugins/dev-tools/semantic-analysis",
-      "description": "Serena MCP使用の意味的コード解析。API整合性、アーキテクチャ境界、依存関係健全性",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" },
-      "strict": false
-    },
-    {
-      "name": "tsr",
-      "source": "./plugins/dev-tools/tsr",
-      "description": "未使用TypeScript/Reactコードの検出・削除。TSRツール活用",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" },
-      "strict": false
-    },
-    {
-      "name": "wezterm",
-      "source": "./plugins/dev-tools/wezterm",
-      "description": "WezTerm設定レビュー。GPU加速、キーバインド、テーマ統合、クロスプラットフォーム互換性",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" },
-      "strict": false
-    },
-    {
-      "name": "mcp-tools",
-      "source": "./plugins/docs/mcp-tools",
-      "description": "MCPサーバーセットアップ・セキュリティガイド。設定、インストール、環境変数管理",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" },
-      "strict": false
-    },
-    {
-      "name": "claude-marketplace-sync",
-      "source": "./plugins/utils/claude-marketplace-sync",
-      "description": "Claude Code marketplaceプラグイン/スキル同期管理",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" },
-      "strict": false
-    },
-    {
-      "name": "dev-tools-bundle",
-      "source": "./plugins/bundles/dev-tools-bundle",
-      "description": "開発ツールスキル一括インストール（27スキル）。React、TypeScript、Go、コードレビュー、mise等の開発支援スキルをまとめてインストール",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" }
-    },
-    {
-      "name": "docs-bundle",
-      "source": "./plugins/bundles/docs-bundle",
-      "description": "ドキュメント作成スキル一括インストール（5スキル）。Deckset、Draw.io、Markdownドキュメント、MCPツール、スライド作成スキルをまとめてインストール",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" }
-    },
-    {
-      "name": "utils-bundle",
-      "source": "./plugins/bundles/utils-bundle",
-      "description": "ユーティリティスキル一括インストール（2スキル）。dotenvx、Claude Marketplace同期スキルをまとめてインストール",
-      "version": "1.0.0",
-      "author": { "name": "jey3dayo" }
     }
   ]
 }

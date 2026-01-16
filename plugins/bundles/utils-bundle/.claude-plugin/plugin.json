@@ -1,9 +1,0 @@
-{
-  "name": "utils-bundle",
-  "version": "1.0.0",
-  "description": "ユーティリティスキル一括インストール（2スキル）。dotenvx、Claude Marketplace同期スキルをまとめてインストール",
-  "author": {
-    "name": "jey3dayo"
-  },
-  "skills": ["./skills/"]
-}
