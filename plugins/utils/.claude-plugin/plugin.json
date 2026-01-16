@@ -1,0 +1,9 @@
+{
+  "name": "utils-bundle",
+  "version": "1.0.0",
+  "description": "ユーティリティカテゴリの全スキル（2プラグイン）。dotenvx、Claude Marketplace同期スキルをまとめてインストール",
+  "author": {
+    "name": "jey3dayo"
+  },
+  "skills": ["./claude-marketplace-sync/", "./dotenvx/skills/"]
+}

@@ -113,7 +113,7 @@ argument-hint: '[--simple] [--staged|--recent|--branch <name>] [--with-impact] [
 
 GitHub PRのレビューコメントを自動修正：
 
-- `pr-review-automation`スキル統合
+- `gh-fix-review`スキル統合
 - 優先度別コメント分類（Critical/High/Major/Minor）
 - 自動修正と品質保証
 - トラッキングドキュメント生成

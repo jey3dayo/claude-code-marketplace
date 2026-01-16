@@ -22,7 +22,7 @@ taplo = 'latest'
 # --- Format Commands ---
 [tasks."format:prettier"]
 description = "Prettierでフォーマット"
-run = "prettier --write --cache --log-level warn '**/*.{md,json,yml,yaml}'"
+run = "prettier --write --cache --log-level warn '**/*.{md,json,yml,yaml,ts}'"
 
 [tasks."format:markdown"]
 description = "Markdownlintで自動修正"
@@ -35,7 +35,7 @@ run = "taplo format"
 # --- Lint Commands ---
 [tasks."lint:prettier"]
 description = "Prettierでチェック"
-run = "prettier --check --cache --log-level warn '**/*.{md,json,yml,yaml}'"
+run = "prettier --check --cache --log-level warn '**/*.{md,json,yml,yaml,ts}'"
 
 [tasks."lint:markdown"]
 description = "Markdownlintでチェック"
@@ -61,6 +61,15 @@ run = "git submodule update --remote --merge"
 [tasks."submodule:init"]
 description = "サブモジュールを初期化（クローン後の初回のみ）"
 run = "git submodule update --init --recursive"
+
+# --- Plugin Management Commands ---
+[tasks."plugin:generate"]
+description = "plugin.jsonのskills配列をディレクトリ構造から自動生成"
+run = "bun run scripts/generate-plugin-json.ts"
+
+[tasks."plugin:generate:dry-run"]
+description = "plugin.json変更内容をプレビュー（書き込みなし）"
+run = "bun run scripts/generate-plugin-json.ts --dry-run"
 
 # ========================================
 # 集約タスク（まとめ実行のショートカット）
