@@ -9,7 +9,7 @@
     {
       "name": "dev-tools-bundle",
       "source": "./plugins/dev-tools",
-      "description": "開発ツールカテゴリの全スキル（27プラグイン）。React、TypeScript、Go、コードレビュー、mise等の開発支援スキルをまとめてインストール",
+      "description": "開発ツールカテゴリの全スキル（28プラグイン）。React、TypeScript、Go、コードレビュー、mise、Marketplace Builder等の開発支援スキルをまとめてインストール",
       "version": "1.0.0",
       "author": { "name": "jey3dayo" }
     },

@@ -22,7 +22,7 @@ taplo = 'latest'
 # --- Format Commands ---
 [tasks."format:prettier"]
 description = "Prettierでフォーマット"
-run = "prettier --write --cache --log-level warn '**/*.{md,json,yml,yaml}'"
+run = "prettier --write --cache --log-level warn '**/*.{md,json,yml,yaml,ts}'"
 
 [tasks."format:markdown"]
 description = "Markdownlintで自動修正"
