@@ -23,6 +23,9 @@
     },
     {
       "pattern": "^https://inkscape\\.org/"
+    },
+    {
+      "pattern": "^https://imageoptim\\.com/"
     }
   ],
   "replacementPatterns": [
