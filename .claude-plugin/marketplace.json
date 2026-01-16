@@ -218,8 +218,8 @@
       "strict": false
     },
     {
-      "name": "pr-review-automation",
-      "source": "./plugins/dev-tools/pr-review-automation",
+      "name": "gh-fix-review",
+      "source": "./plugins/dev-tools/gh-fix-review",
       "description": "GitHub PRレビューコメントの自動処理。CodeRabbit/人間コメントの分類と修正",
       "version": "1.0.0",
       "author": { "name": "jey3dayo" },
@@ -280,6 +280,27 @@
       "version": "1.0.0",
       "author": { "name": "jey3dayo" },
       "strict": false
+    },
+    {
+      "name": "dev-tools-bundle",
+      "source": "./plugins/bundles/dev-tools-bundle",
+      "description": "開発ツールスキル一括インストール（27スキル）。React、TypeScript、Go、コードレビュー、mise等の開発支援スキルをまとめてインストール",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" }
+    },
+    {
+      "name": "docs-bundle",
+      "source": "./plugins/bundles/docs-bundle",
+      "description": "ドキュメント作成スキル一括インストール（5スキル）。Deckset、Draw.io、Markdownドキュメント、MCPツール、スライド作成スキルをまとめてインストール",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" }
+    },
+    {
+      "name": "utils-bundle",
+      "source": "./plugins/bundles/utils-bundle",
+      "description": "ユーティリティスキル一括インストール（2スキル）。dotenvx、Claude Marketplace同期スキルをまとめてインストール",
+      "version": "1.0.0",
+      "author": { "name": "jey3dayo" }
     }
   ]
 }

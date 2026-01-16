@@ -1,12 +1,12 @@
 ---
-name: pr-review-automation
+name: gh-fix-review
 description: |
   [What] Automated skill for GitHub PR review comment processing. Automatically classifies review comments (from CodeRabbit, human reviewers, bots) by priority (Critical/High/Major/Minor) and applies fixes in priority order. Integrates with TodoWrite for progress tracking and creates tracking documents
   [When] Use when: users mention "/review --fix-pr", "PR review automation", "CodeRabbit fixes", or need automated PR feedback processing. **Always responds in Japanese**
   [Keywords] /review --fix-pr, PR review automation, CodeRabbit fixes
 ---
 
-# PR Review Automation Skill
+# gh-fix-review Skill
 
 GitHub Pull Requestのレビューコメントを自動的に分類・修正するスキルです。
 
