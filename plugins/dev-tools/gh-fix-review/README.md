@@ -133,13 +133,13 @@ This skill is available in the Claude Code marketplace:
 
 ```bash
 # Install from marketplace
-claude marketplace install pr-review-automation
+claude marketplace install gh-fix-review
 ```
 
 Or manually place in your Claude Code plugins directory:
 
 ```bash
-~/.claude/skills/pr-review-automation/
+~/.claude/skills/gh-fix-review/
 ```
 
 ## Project-Specific Configuration

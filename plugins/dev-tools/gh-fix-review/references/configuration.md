@@ -200,10 +200,10 @@ PR Review Automationスキルは以下の順序で設定ファイルを探しま
 
 ```bash
 # プロジェクト固有の設定
-cp ~/.claude/skills/pr-review-automation/.pr-review-config.default.json .pr-review-config.json
+cp ~/.claude/skills/gh-fix-review/.pr-review-config.default.json .pr-review-config.json
 
 # グローバル設定
-cp ~/.claude/skills/pr-review-automation/.pr-review-config.default.json ~/.pr-review-config.json
+cp ~/.claude/skills/gh-fix-review/.pr-review-config.default.json ~/.pr-review-config.json
 ```
 
 ### 2. 必要に応じてカスタマイズ

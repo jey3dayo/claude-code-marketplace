@@ -117,10 +117,10 @@
 
 ### ~/.claude/ から marketplace への移行
 
-元のスキルは `~/.claude/skills/pr-review-automation/` に配置されていましたが、一般化されたバージョンは以下に配置されます：
+元のスキルは `~/.claude/skills/gh-fix-review/` に配置されていましたが、一般化されたバージョンは以下に配置されます：
 
 ```
-~/src/github.com/jey3dayo/claude-code-marketplace/plugins/dev-tools/pr-review-automation/
+~/src/github.com/jey3dayo/claude-code-marketplace/plugins/dev-tools/gh-fix-review/
 ├── SKILL.md                           # スキル定義
 ├── .pr-review-config.schema.json     # 設定ファイルスキーマ
 ├── .pr-review-config.default.json    # デフォルト設定
@@ -136,7 +136,7 @@
 ```bash
 # 1. デフォルト設定をコピー
 cd /path/to/your/project
-cp ~/src/github.com/jey3dayo/claude-code-marketplace/plugins/dev-tools/pr-review-automation/.pr-review-config.default.json .pr-review-config.json
+cp ~/src/github.com/jey3dayo/claude-code-marketplace/plugins/dev-tools/gh-fix-review/.pr-review-config.default.json .pr-review-config.json
 
 # 2. プロジェクト固有のルールを追加
 vim .pr-review-config.json
