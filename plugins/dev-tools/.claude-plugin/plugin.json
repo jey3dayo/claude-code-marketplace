@@ -34,5 +34,6 @@
     "./typescript/skills/",
     "./wezterm/",
     "./zsh/skills/"
-  ]
+  ],
+  "commands": ["./cc-sdd/commands/", "./code-review/commands/"]
 }
