@@ -1,9 +1,0 @@
-{
-  "name": "security",
-  "version": "1.0.0",
-  "description": "セキュリティ-focusedコードレビュー。OWASP Top 10準拠、入力検証、認証/認可",
-  "author": {
-    "name": "jey3dayo"
-  },
-  "skills": ["./SKILL.md"]
-}

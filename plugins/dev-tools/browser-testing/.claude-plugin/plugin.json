@@ -1,9 +1,0 @@
-{
-  "name": "browser-testing",
-  "version": "1.0.0",
-  "description": "Chrome MCPを使用したブラウザ自動テスト。認証フロー、UI操作、localhost検証",
-  "author": {
-    "name": "jey3dayo"
-  },
-  "skills": ["./SKILL.md"]
-}

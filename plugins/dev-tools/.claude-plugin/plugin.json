@@ -1,16 +1,13 @@
 {
   "name": "dev-tools-bundle",
   "version": "1.0.0",
-  "description": "開発ツールカテゴリの全スキル（28プラグイン）。React、TypeScript、Go、コードレビュー、mise、Marketplace Builder等の開発支援スキルをまとめてインストール",
+  "description": "開発ツールカテゴリの全スキル(22プラグイン)。React、TypeScript、Go、コードレビュー、mise、Marketplace Builder等の開発支援スキルをまとめてインストール",
   "author": {
     "name": "jey3dayo"
   },
   "skills": [
     "./agent-creator/",
-    "./browser-testing/",
     "./cc-sdd/",
-    "./chrome-extension/skills/",
-    "./ci-diagnostics/",
     "./code-quality-improvement/",
     "./code-review/skills/",
     "./command-creator/",
@@ -27,8 +24,6 @@
     "./react/skills/",
     "./react-grid-layout/skills/",
     "./rules-creator/",
-    "./security/",
-    "./semantic-analysis/",
     "./similarity/skills/",
     "./tsr/",
     "./typescript/skills/",
