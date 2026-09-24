@@ -66,7 +66,7 @@ claude-code-marketplace/
 │   └── openai-skills/                # OpenAI公式スキル（サブモジュール）
 │       └── .claude-plugin/
 │           └── plugin.json
-├── CLAUDE.md                         # このファイル
+├── AGENTS.md                         # このファイル
 └── README.md                         # 利用者向けガイド
 ```
 

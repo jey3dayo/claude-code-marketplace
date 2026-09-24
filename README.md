@@ -93,7 +93,7 @@ mise run submodule:init     # 初期化（--recursive忘れた時）
 
 ## 参考リンク
 
-- 開発者向けガイド: [CLAUDE.md](CLAUDE.md)
+- 開発者向けガイド: [AGENTS.md](AGENTS.md)
 - [プラグインリファレンス](https://code.claude.com/docs/en/plugins-reference) - プラグインの構造とメタデータ
 - [プラグインマーケットプレイス](https://code.claude.com/docs/en/plugin-marketplaces) - マーケットプレイスの仕組み
 - [スラッシュコマンド](https://code.claude.com/docs/en/slash-commands) / [サブエージェント](https://code.claude.com/docs/en/sub-agents)
