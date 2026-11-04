@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7.0.1
 
       - name: Install mise
         run: |
@@ -24,7 +24,7 @@ jobs:
           echo "$HOME/.local/bin" >> $GITHUB_PATH
 
       - name: Cache mise tools
-        uses: actions/cache@v4
+        uses: actions/cache@v6.1.0
         with:
           path: |
             ~/.local/share/mise
@@ -35,6 +35,11 @@ jobs:
 
       - name: Install tools
         run: mise install
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+      - name: Verify actions.lock
+        run: mise run actions-lock:verify
 
       - name: Run format check
         run: mise run format
@@ -52,7 +57,7 @@ jobs:
     if: github.event_name == 'pull_request'
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7.0.1
 
       - name: Install mise
         run: |
@@ -60,7 +65,7 @@ jobs:
           echo "$HOME/.local/bin" >> $GITHUB_PATH
 
       - name: Cache mise tools
-        uses: actions/cache@v4
+        uses: actions/cache@v6.1.0
         with:
           path: |
             ~/.local/share/mise
@@ -71,6 +76,8 @@ jobs:
 
       - name: Install tools
         run: mise install
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
 
       - name: Run link check
         run: mise run lint:links

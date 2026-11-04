@@ -573,7 +573,7 @@ react-testing/
 
 - **Agent Skills**: <https://agentskills.io>
 - **What Are Skills**: <https://agentskills.io/what-are-skills>
-- **Skill Structure**: <https://agentskills.io/skill-structure>
+- **Skill Structure**: <https://agentskills.io/specification>
 
 ### Platform Documentation
 
