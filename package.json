@@ -8,6 +8,6 @@
     "generate:plugin-json:dry-run": "bun run scripts/generate-plugin-json.ts --dry-run"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "^1.4.4"
   }
 }
